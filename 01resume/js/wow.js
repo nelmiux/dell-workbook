@@ -1,7 +1,22 @@
 (function() {
-  var MutationObserver, Util, WeakMap, getComputedStyle, getComputedStyleRX,
-    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
-    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+  var MutationObserver,
+    Util,
+    WeakMap,
+    getComputedStyle,
+    getComputedStyleRX,
+    __bind = function(fn, me) {
+      return function() {
+        return fn.apply(me, arguments);
+      };
+    },
+    __indexOf =
+      [].indexOf ||
+      function(item) {
+        for (var i = 0, l = this.length; i < l; i++) {
+          if (i in this && this[i] === item) return i;
+        }
+        return -1;
+      };
 
   Util = (function() {
     function Util() {}
@@ -25,9 +40,9 @@
       if (elem.addEventListener != null) {
         return elem.addEventListener(event, fn, false);
       } else if (elem.attachEvent != null) {
-        return elem.attachEvent("on" + event, fn);
+        return elem.attachEvent('on' + event, fn);
       } else {
-        return elem[event] = fn;
+        return (elem[event] = fn);
       }
     };
 
@@ -35,7 +50,7 @@
       if (elem.removeEventListener != null) {
         return elem.removeEventListener(event, fn, false);
       } else if (elem.detachEvent != null) {
-        return elem.detachEvent("on" + event, fn);
+        return elem.detachEvent('on' + event, fn);
       } else {
         return delete elem[event];
       }
@@ -50,77 +65,85 @@
     };
 
     return Util;
-
   })();
 
-  WeakMap = this.WeakMap || this.MozWeakMap || (WeakMap = (function() {
-    function WeakMap() {
-      this.keys = [];
-      this.values = [];
-    }
+  WeakMap =
+    this.WeakMap ||
+    this.MozWeakMap ||
+    (WeakMap = (function() {
+      function WeakMap() {
+        this.keys = [];
+        this.values = [];
+      }
 
-    WeakMap.prototype.get = function(key) {
-      var i, item, _i, _len, _ref;
-      _ref = this.keys;
-      for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
-        item = _ref[i];
-        if (item === key) {
-          return this.values[i];
+      WeakMap.prototype.get = function(key) {
+        var i, item, _i, _len, _ref;
+        _ref = this.keys;
+        for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+          item = _ref[i];
+          if (item === key) {
+            return this.values[i];
+          }
+        }
+      };
+
+      WeakMap.prototype.set = function(key, value) {
+        var i, item, _i, _len, _ref;
+        _ref = this.keys;
+        for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
+          item = _ref[i];
+          if (item === key) {
+            this.values[i] = value;
+            return;
+          }
+        }
+        this.keys.push(key);
+        return this.values.push(value);
+      };
+
+      return WeakMap;
+    })());
+
+  MutationObserver =
+    this.MutationObserver ||
+    this.WebkitMutationObserver ||
+    this.MozMutationObserver ||
+    (MutationObserver = (function() {
+      function MutationObserver() {
+        if (typeof console !== 'undefined' && console !== null) {
+          console.warn('MutationObserver is not supported by your browser.');
+        }
+        if (typeof console !== 'undefined' && console !== null) {
+          console.warn(
+            'WOW.js cannot detect dom mutations, please call .sync() after loading new content.'
+          );
         }
       }
-    };
 
-    WeakMap.prototype.set = function(key, value) {
-      var i, item, _i, _len, _ref;
-      _ref = this.keys;
-      for (i = _i = 0, _len = _ref.length; _i < _len; i = ++_i) {
-        item = _ref[i];
-        if (item === key) {
-          this.values[i] = value;
-          return;
+      MutationObserver.notSupported = true;
+
+      MutationObserver.prototype.observe = function() {};
+
+      return MutationObserver;
+    })());
+
+  getComputedStyle =
+    this.getComputedStyle ||
+    function(el, pseudo) {
+      this.getPropertyValue = function(prop) {
+        var _ref;
+        if (prop === 'float') {
+          prop = 'styleFloat';
         }
-      }
-      this.keys.push(key);
-      return this.values.push(value);
+        if (getComputedStyleRX.test(prop)) {
+          prop.replace(getComputedStyleRX, function(_, char) {
+            return char.toUpperCase();
+          });
+        }
+        return ((_ref = el.currentStyle) != null ? _ref[prop] : void 0) || null;
+      };
+      return this;
     };
-
-    return WeakMap;
-
-  })());
-
-  MutationObserver = this.MutationObserver || this.WebkitMutationObserver || this.MozMutationObserver || (MutationObserver = (function() {
-    function MutationObserver() {
-      if (typeof console !== "undefined" && console !== null) {
-        console.warn('MutationObserver is not supported by your browser.');
-      }
-      if (typeof console !== "undefined" && console !== null) {
-        console.warn('WOW.js cannot detect dom mutations, please call .sync() after loading new content.');
-      }
-    }
-
-    MutationObserver.notSupported = true;
-
-    MutationObserver.prototype.observe = function() {};
-
-    return MutationObserver;
-
-  })());
-
-  getComputedStyle = this.getComputedStyle || function(el, pseudo) {
-    this.getPropertyValue = function(prop) {
-      var _ref;
-      if (prop === 'float') {
-        prop = 'styleFloat';
-      }
-      if (getComputedStyleRX.test(prop)) {
-        prop.replace(getComputedStyleRX, function(_, char) {
-          return char.toUpperCase();
-        });
-      }
-      return ((_ref = el.currentStyle) != null ? _ref[prop] : void 0) || null;
-    };
-    return this;
-  };
 
   getComputedStyleRX = /(\-([a-z]){1})/g;
 
@@ -148,28 +171,28 @@
     WOW.prototype.init = function() {
       var _ref;
       this.element = window.document.documentElement;
-      if ((_ref = document.readyState) === "interactive" || _ref === "complete") {
+      if ((_ref = document.readyState) === 'interactive' || _ref === 'complete') {
         this.start();
       } else {
         this.util().addEvent(document, 'DOMContentLoaded', this.start);
       }
-      return this.finished = [];
+      return (this.finished = []);
     };
 
     WOW.prototype.start = function() {
       var box, _i, _len, _ref;
       this.stopped = false;
-      this.boxes = (function() {
+      this.boxes = function() {
         var _i, _len, _ref, _results;
-        _ref = this.element.querySelectorAll("." + this.config.boxClass);
+        _ref = this.element.querySelectorAll('.' + this.config.boxClass);
         _results = [];
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
           box = _ref[_i];
           _results.push(box);
         }
         return _results;
-      }).call(this);
-      this.all = (function() {
+      }.call(this);
+      this.all = function() {
         var _i, _len, _ref, _results;
         _ref = this.boxes;
         _results = [];
@@ -178,7 +201,7 @@
           _results.push(box);
         }
         return _results;
-      }).call(this);
+      }.call(this);
       if (this.boxes.length) {
         if (this.disabled()) {
           this.resetStyle();
@@ -196,26 +219,30 @@
         this.interval = setInterval(this.scrollCallback, 50);
       }
       if (this.config.live) {
-        return new MutationObserver((function(_this) {
-          return function(records) {
-            var node, record, _j, _len1, _results;
-            _results = [];
-            for (_j = 0, _len1 = records.length; _j < _len1; _j++) {
-              record = records[_j];
-              _results.push((function() {
-                var _k, _len2, _ref1, _results1;
-                _ref1 = record.addedNodes || [];
-                _results1 = [];
-                for (_k = 0, _len2 = _ref1.length; _k < _len2; _k++) {
-                  node = _ref1[_k];
-                  _results1.push(this.doSync(node));
-                }
-                return _results1;
-              }).call(_this));
-            }
-            return _results;
-          };
-        })(this)).observe(document.body, {
+        return new MutationObserver(
+          (function(_this) {
+            return function(records) {
+              var node, record, _j, _len1, _results;
+              _results = [];
+              for (_j = 0, _len1 = records.length; _j < _len1; _j++) {
+                record = records[_j];
+                _results.push(
+                  function() {
+                    var _k, _len2, _ref1, _results1;
+                    _ref1 = record.addedNodes || [];
+                    _results1 = [];
+                    for (_k = 0, _len2 = _ref1.length; _k < _len2; _k++) {
+                      node = _ref1[_k];
+                      _results1.push(this.doSync(node));
+                    }
+                    return _results1;
+                  }.call(_this)
+                );
+              }
+              return _results;
+            };
+          })(this)
+        ).observe(document.body, {
           childList: true,
           subtree: true
         });
@@ -246,7 +273,7 @@
         return;
       }
       element = element.parentNode || element;
-      _ref = element.querySelectorAll("." + this.config.boxClass);
+      _ref = element.querySelectorAll('.' + this.config.boxClass);
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         box = _ref[_i];
@@ -258,7 +285,7 @@
           } else {
             this.applyStyle(box, true);
           }
-          _results.push(this.scrolled = true);
+          _results.push((this.scrolled = true));
         } else {
           _results.push(void 0);
         }
@@ -268,7 +295,7 @@
 
     WOW.prototype.show = function(box) {
       this.applyStyle(box);
-      return box.className = "" + box.className + " " + this.config.animateClass;
+      return (box.className = '' + box.className + ' ' + this.config.animateClass);
     };
 
     WOW.prototype.applyStyle = function(box, hidden) {
@@ -276,11 +303,13 @@
       duration = box.getAttribute('data-wow-duration');
       delay = box.getAttribute('data-wow-delay');
       iteration = box.getAttribute('data-wow-iteration');
-      return this.animate((function(_this) {
-        return function() {
-          return _this.customStyle(box, hidden, duration, delay, iteration);
-        };
-      })(this));
+      return this.animate(
+        (function(_this) {
+          return function() {
+            return _this.customStyle(box, hidden, duration, delay, iteration);
+          };
+        })(this)
+      );
     };
 
     WOW.prototype.animate = (function() {
@@ -301,7 +330,7 @@
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         box = _ref[_i];
-        _results.push(box.style.visibility = 'visible');
+        _results.push((box.style.visibility = 'visible'));
       }
       return _results;
     };
@@ -332,24 +361,28 @@
       return box;
     };
 
-    WOW.prototype.vendors = ["moz", "webkit"];
+    WOW.prototype.vendors = ['moz', 'webkit'];
 
     WOW.prototype.vendorSet = function(elem, properties) {
       var name, value, vendor, _results;
       _results = [];
       for (name in properties) {
         value = properties[name];
-        elem["" + name] = value;
-        _results.push((function() {
-          var _i, _len, _ref, _results1;
-          _ref = this.vendors;
-          _results1 = [];
-          for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-            vendor = _ref[_i];
-            _results1.push(elem["" + vendor + (name.charAt(0).toUpperCase()) + (name.substr(1))] = value);
-          }
-          return _results1;
-        }).call(this));
+        elem['' + name] = value;
+        _results.push(
+          function() {
+            var _i, _len, _ref, _results1;
+            _ref = this.vendors;
+            _results1 = [];
+            for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+              vendor = _ref[_i];
+              _results1.push(
+                (elem['' + vendor + name.charAt(0).toUpperCase() + name.substr(1)] = value)
+              );
+            }
+            return _results1;
+          }.call(this)
+        );
       }
       return _results;
     };
@@ -361,7 +394,7 @@
       _ref = this.vendors;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         vendor = _ref[_i];
-        result = result || style.getPropertyCSSValue("-" + vendor + "-" + property);
+        result = result || style.getPropertyCSSValue('-' + vendor + '-' + property);
       }
       return result;
     };
@@ -389,20 +422,20 @@
     };
 
     WOW.prototype.scrollHandler = function() {
-      return this.scrolled = true;
+      return (this.scrolled = true);
     };
 
     WOW.prototype.scrollCallback = function() {
       var box;
       if (this.scrolled) {
         this.scrolled = false;
-        this.boxes = (function() {
+        this.boxes = function() {
           var _i, _len, _ref, _results;
           _ref = this.boxes;
           _results = [];
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             box = _ref[_i];
-            if (!(box)) {
+            if (!box) {
               continue;
             }
             if (this.isVisible(box)) {
@@ -412,7 +445,7 @@
             _results.push(box);
           }
           return _results;
-        }).call(this);
+        }.call(this);
         if (!(this.boxes.length || this.config.live)) {
           return this.stop();
         }
@@ -425,7 +458,7 @@
         element = element.parentNode;
       }
       top = element.offsetTop;
-      while (element = element.offsetParent) {
+      while ((element = element.offsetParent)) {
         top += element.offsetTop;
       }
       return top;
@@ -435,14 +468,15 @@
       var bottom, offset, top, viewBottom, viewTop;
       offset = box.getAttribute('data-wow-offset') || this.config.offset;
       viewTop = window.pageYOffset;
-      viewBottom = viewTop + Math.min(this.element.clientHeight, this.util().innerHeight()) - offset;
+      viewBottom =
+        viewTop + Math.min(this.element.clientHeight, this.util().innerHeight()) - offset;
       top = this.offsetTop(box);
       bottom = top + box.clientHeight;
       return top <= viewBottom && bottom >= viewTop;
     };
 
     WOW.prototype.util = function() {
-      return this._util != null ? this._util : this._util = new Util();
+      return this._util != null ? this._util : (this._util = new Util());
     };
 
     WOW.prototype.disabled = function() {
@@ -450,7 +484,5 @@
     };
 
     return WOW;
-
   })();
-
-}).call(this);
+}.call(this));
