@@ -219,12 +219,7 @@
       // use fluid columnWidth function if there
       this.columnWidth = this.isFluid
         ? this.options.columnWidth(containerWidth)
-        : // if not, how about the explicitly set option?
-          this.options.columnWidth ||
-          // or use the size of the first item
-          this.$bricks.outerWidth(true) ||
-          // if there's no items, use size of container
-          containerWidth;
+        : this.options.columnWidth || this.$bricks.outerWidth(true) || containerWidth;
 
       this.columnWidth += this.options.gutterWidth;
 
