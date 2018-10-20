@@ -1039,7 +1039,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   animation-name: fadeIn;
 }
 
-@-webkit-keyframes fadeInDown {
+@-webkit-keyframes fade-in-down {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
@@ -1052,7 +1052,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-@keyframes fadeInDown {
+@keyframes fade-in-down {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
@@ -1065,12 +1065,12 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
+.fade-in-down {
+  -webkit-animation-name: fade-in-down;
+  animation-name: fade-in-down;
 }
 
-@-webkit-keyframes fadeInDownBig {
+@-webkit-keyframes fade-in-downBig {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(0, -2000px, 0);
@@ -1083,7 +1083,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-@keyframes fadeInDownBig {
+@keyframes fade-in-downBig {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(0, -2000px, 0);
@@ -1096,12 +1096,12 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-.fadeInDownBig {
-  -webkit-animation-name: fadeInDownBig;
-  animation-name: fadeInDownBig;
+.fade-in-downBig {
+  -webkit-animation-name: fade-in-downBig;
+  animation-name: fade-in-downBig;
 }
 
-@-webkit-keyframes fadeInLeft {
+@-webkit-keyframes fade-in-left {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -1114,7 +1114,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-@keyframes fadeInLeft {
+@keyframes fade-in-left {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(-100%, 0, 0);
@@ -1127,12 +1127,12 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-.fadeInLeft {
-  -webkit-animation-name: fadeInLeft;
-  animation-name: fadeInLeft;
+.fade-in-left {
+  -webkit-animation-name: fade-in-left;
+  animation-name: fade-in-left;
 }
 
-@-webkit-keyframes fadeInLeftBig {
+@-webkit-keyframes fade-in-leftBig {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(-2000px, 0, 0);
@@ -1145,7 +1145,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-@keyframes fadeInLeftBig {
+@keyframes fade-in-leftBig {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(-2000px, 0, 0);
@@ -1158,12 +1158,12 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-.fadeInLeftBig {
-  -webkit-animation-name: fadeInLeftBig;
-  animation-name: fadeInLeftBig;
+.fade-in-leftBig {
+  -webkit-animation-name: fade-in-leftBig;
+  animation-name: fade-in-leftBig;
 }
 
-@-webkit-keyframes fadeInRight {
+@-webkit-keyframes fade-in-right {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(100%, 0, 0);
@@ -1176,7 +1176,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-@keyframes fadeInRight {
+@keyframes fade-in-right {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(100%, 0, 0);
@@ -1189,12 +1189,12 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-.fadeInRight {
-  -webkit-animation-name: fadeInRight;
-  animation-name: fadeInRight;
+.fade-in-right {
+  -webkit-animation-name: fade-in-right;
+  animation-name: fade-in-right;
 }
 
-@-webkit-keyframes fadeInRightBig {
+@-webkit-keyframes fade-in-rightBig {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(2000px, 0, 0);
@@ -1207,7 +1207,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-@keyframes fadeInRightBig {
+@keyframes fade-in-rightBig {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(2000px, 0, 0);
@@ -1220,9 +1220,9 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-.fadeInRightBig {
-  -webkit-animation-name: fadeInRightBig;
-  animation-name: fadeInRightBig;
+.fade-in-rightBig {
+  -webkit-animation-name: fade-in-rightBig;
+  animation-name: fade-in-rightBig;
 }
 
 @-webkit-keyframes fadeInUp {
@@ -2340,7 +2340,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
-@-webkit-keyframes rollIn {
+@-webkit-keyframes roll-in {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
@@ -2353,7 +2353,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-@keyframes rollIn {
+@keyframes roll-in {
   0% {
     opacity: 0;
     -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
@@ -2366,9 +2366,9 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
   }
 }
 
-.rollIn {
-  -webkit-animation-name: rollIn;
-  animation-name: rollIn;
+.roll-in {
+  -webkit-animation-name: roll-in;
+  animation-name: roll-in;
 }
 
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */

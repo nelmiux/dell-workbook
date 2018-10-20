@@ -326,7 +326,7 @@
    *
    * In a nutshell, we need to figure out if fixed positioning is supported.
    * Unfortunately, this is very difficult to do on iOS, and usually involves
-   * injecting content, scrolling the page, etc.. It's ugly.
+   * injecting content, scroll-ing the page, etc.. It's ugly.
    * jQuery Mobile uses this workaround. It's not ideal, but works.
    *
    * Modified to detect IE6

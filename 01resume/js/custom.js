@@ -19,7 +19,7 @@
     }
   });
 
-  //jQuery for page scrolling feature - requires jQuery Easing plugin
+  //jQuery for page scroll-ing feature - requires jQuery Easing plugin
   $(function() {
     $('.navbar-nav li a').bind('click', function(event) {
       var $anchor = $(this);
