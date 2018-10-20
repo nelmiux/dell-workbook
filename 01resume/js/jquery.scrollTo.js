@@ -48,16 +48,16 @@
           attr = {},
           win = $elem.is('html,body');
         switch (typeof targ) {
-          case 'number':
-          case 'string':
-            if (/^([+-]=)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
-              targ = both(targ);
-              break;
-            }
-            targ = $(targ, this);
-            if (!targ.length) return;
-          case 'object':
-            if (targ.is || targ.style) toff = (targ = $(targ)).offset();
+        case 'number':
+        case 'string':
+          if (/^([+-]=)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
+            targ = both(targ);
+            break;
+          }
+          targ = $(targ, this);
+          if (!targ.length) return;
+        case 'object':
+          if (targ.is || targ.style) toff = (targ = $(targ)).offset();
         }
         $.each(g.axis.split(''), function(i, a) {
           var b = a == 'x' ? 'Left' : 'Top',

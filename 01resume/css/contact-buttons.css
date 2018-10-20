@@ -5,8 +5,8 @@
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  */
- 
- #contact-buttons-bar {
+
+#contact-buttons-bar {
   position: fixed;
   bottom: 0%;
   left: -50px;
@@ -19,11 +19,10 @@
   position: absolute;
 }
 
-.contact-button-link  {
+.contact-button-link {
   display: block;
   width: 50px;
   height: 50px;
-
   text-align: center;
   line-height: 47px;
   font-size: 20px;
@@ -31,15 +30,14 @@
   color: #fff;
   position: relative;
   left: 0;
-  
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-  
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-transition: all 250ms;
-     -moz-transition: all 250ms;
-          transition: all 250ms;
+  -moz-transition: all 250ms;
+  transition: all 250ms;
 }
+
 .contact-button-link:hover,
 .contact-button-link:focus,
 .contact-button-link:active {
@@ -47,6 +45,7 @@
   padding-left: 20px;
   width: 80px;
 }
+
 .contact-button-link.cb-hidden {
   left: -50px;
 }
@@ -81,6 +80,7 @@
   padding: 0;
   width: 50px;
 }
+
 .contact-button-link.show-hide-contact-bar:hover {
   color: #000;
   background: #ccc;
@@ -89,12 +89,10 @@
 }
 
 @media (max-width:767px) {
-  
-  .contact-button-link  {
+  .contact-button-link {
     width: 40px;
     height: 40px;
   }
-  
   .contact-button-link:hover,
   .contact-button-link:focus,
   .contact-button-link:active {
@@ -104,11 +102,10 @@
 }
 
 @media (max-height:767px) {
-  .contact-button-link  {
+  .contact-button-link {
     width: 40px;
     height: 40px;
   }
-  
   .contact-button-link:hover,
   .contact-button-link:focus,
   .contact-button-link:active {
