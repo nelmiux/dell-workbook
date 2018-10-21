@@ -1105,8 +1105,12 @@ btn {
   clear: both;
 }
 
+/*-----------------------
+--- Resume Styles ----
+-------------------------*/
+
 #resume {
-  padding-top: 60px;
+  padding-top: 80px;
   padding-bottom: 120px;
   border-top: 10px solid #ff6f00;
 }
