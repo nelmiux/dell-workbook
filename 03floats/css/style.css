@@ -201,8 +201,19 @@ p {
 
 .submit-button {
   width: 100%;
+  background-color: #0062ba;
+  padding: 15px;
+  border-radius: 2px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
 }
 
 .form-item {
   margin: 25px 0;
+}
+
+input {
+  border: 2px solid white;
+  background-color: transparent;
 }
