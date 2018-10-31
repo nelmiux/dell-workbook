@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+  <!-- ==============================================
+    Title and Meta Tags
+    =============================================== -->
+  <meta charset="utf-8">
+  <title>UX - Atlantic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta description="Travel Site">
+  <meta name="Nelma Perera" content="UX Atlantic Home">
+
+  <!-- ==============================================
+    CSS
+    =============================================== -->
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- ==============================================
+    MAIN NAV
+    =============================================== -->
+  <nav class="main-navbar" role="navigation">
+    <div class="nav-wrapper">
+
+      <div class="nav-logo">
+        <img src="img/logo.png" />
+      </div>
+
+      <div class="nav-desktop">
+        <ul>
+          <li class="active">
+            <img src="img/home-icon.png">
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <img src="img/deal-icon.png">
+            <a href="#travel_deals">Travel Deals Me</a>
+          </li>
+          <li>
+            <img src="img/schedule-icon.png">
+            <a href="#flight_schedule">Flight Schedule</a>
+          </li>
+          <li>
+            <img src="img/login-icon.png">
+            <a href="#register_login">Register/Login</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- <ul id="nav-mobile" class="nav-mobile">
+        <li class="active">
+          <a href="#home"><img src="img/home-icon.png">Home</a>
+        </li>
+        <li>
+          <a href="#travel_deals"><img src="img/deal-icon.png">Travel Deals Me</a>
+        </li>
+        <li>
+          <a href="#flight_schedule"><img src="img/schedule-icon.png">Flight Schedule</a>
+        </li>
+        <li>
+          <a href="#register_login"><img src="img/login-icon.png">Register/Login</a>
+        </li>
+      </ul>
+
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a> -->
+    </div>
+  </nav>
+  <!--End main-nav -->
+
+  <!-- ==============================================
+      CONTENT
+      =============================================== -->
+  <div class="booking-widget">
+    <div class="booking-widget-header">
+      <button class="booking-widget-header-button active">
+        <img class="button-icon" src="img/plane-icon.png">
+      </button>
+      <button class="booking-widget-header-button">
+        <img class="button-icon" src="img/hotel-icon.png">
+      </button>
+      <button class="booking-widget-header-button">
+        <img class="button-icon" src="img/car-icon.png">
+      </button>
+    </div>
+    <div class="booking-widget booking-widget-body-wrapper">
+      <div class="booking-widget-body">
+        <form class="booking-form">
+          <div class="booking-form-row">
+            <div class="booking-form-group">
+              <div class="form-item"><label for="depart">Depart</label></div>
+              <div class="form-item"><input id="depart"></div>
+            </div>
+            <div class="booking-form-group">
+              <div class="form-item"><label for="arrive">Arrive</label></div>
+              <div class="form-item"><input id="arrive"></div>
+            </div>
+          </div>
+          <div class="booking-form-row">
+            <div class="form-item">Passengers</div>
+            <div class="form-item"><input type="button"></div>
+            <div class="booking-form-group-row">
+              <div class="form-item"><input type="radio" id="return"></div>
+              <div class="form-item"><label for="return">Return</label></div>
+            </div>
+            <div class="booking-form-group-row">
+              <div class="form-item"><input type="radio" id="one-way"></div>
+              <div class="form-item"><label for="one-way">One Way</label></div>
+            </div>
+          </div>
+          <div class="booking-form-row">
+            <button class="form-item submit-button" type="submit">Search Flights</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--End content -->
+
+  <!-- ==============================================
+    SCRIPTS
+    =============================================== -->
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>
