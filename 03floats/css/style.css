@@ -215,6 +215,11 @@ p {
   width: 220px;
 }
 
+.booking-widget .booking-widget-body .booking-form .booking-form-row .form-item-date,
+select {
+  padding: 18px !important;
+}
+
 .booking-widget .booking-widget-body .booking-form .booking-form-row .booking-form-row-radio-container {
   display: flex;
   flex-direction: row;
