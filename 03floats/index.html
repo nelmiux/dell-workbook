@@ -101,23 +101,32 @@
             <div class="form-item"><label for="arrive">Arrive</label></div>
           </div>
           <div class="booking-form-row">
-            <div class="form-item"><input id="depart"></div>
-            <div class="form-item"><input id="arrive"></div>
+            <div class="form-item"><input id="depart" type="date"></div>
+            <div class="form-item"><input id="arrive" type="date"></div>
           </div>
           <div class="booking-form-row">
-            <div class="form-item">Passengers</div>
-            <div class="form-item"><input type="button"></div>
-            <div class="booking-form-group-row">
-              <div class="form-item"><input type="radio" id="return" name="return"></div>
-              <div class="form-item"><label for="return">Return</label></div>
+            <div class="booking-form-row-dp">
+              <p>Passengers</p>
+              <select class="form-item form-item-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
             </div>
-            <div class="booking-form-group-row">
-              <div class="form-item"><input type="radio" id="one-way" name="one-way"></div>
-              <div class="form-item"><label for="one-way">One Way</label></div>
+            <div class="booking-form-row-radio-container">
+              <div class="radio-group">
+                <input type="radio" id="return" name="return">
+                <label for="return">Return</label>
+              </div>
+              <div class="radio-group">
+                <input type="radio" id="one-way" name="one-way">
+                <label for="one-way">One Way</label>
+              </div>
             </div>
           </div>
           <div class="booking-form-row">
-            <button class="form-item submit-button" type="submit">Search Flights</button>
+            <button class="submit-button" type="submit">Search Flights</button>
           </div>
         </form>
       </div>

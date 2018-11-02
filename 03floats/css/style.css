@@ -8,6 +8,7 @@ body {
   width: 100%;
   background-size: cover;
   margin: 0;
+  font-weight: 600;
 }
 
 p {
@@ -66,7 +67,6 @@ p {
   font-size: 14px;
   color: #b9c3cc;
   text-decoration: none;
-  font-weight: 600;
 }
 
 .nav-wrapper .nav-desktop ul li.active,
@@ -82,7 +82,7 @@ p {
 
 .booking-widget {
   height: 400px;
-  width: 400px;
+  width: 520px;
   margin: 90px 60px;
   border-radius: 4px;
   display: flex;
@@ -182,6 +182,7 @@ p {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
@@ -194,6 +195,63 @@ p {
   width: 100%;
 }
 
+.booking-widget .booking-widget-body .booking-form .booking-form-row .form-item {
+  border: 2px solid white;
+  border-radius: 4px;
+  width: 180px;
+  padding: 20px;
+}
+
+.booking-widget .booking-widget-body .booking-form .booking-form-row .form-item label {
+  color: #6b7b8f;
+}
+
+.booking-widget .booking-widget-body .booking-form .booking-form-row .booking-form-row-dp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 220px;
+}
+
+.booking-widget .booking-widget-body .booking-form .booking-form-row .booking-form-row-radio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  width: 220px;
+}
+
+.booking-widget .booking-widget-body .booking-form .booking-form-row .radio-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.booking-widget .booking-widget-body .booking-form .booking-form-row .radio-group label {
+  margin-top: 2px;
+}
+
+.booking-widget .booking-widget-body .booking-form .booking-form-row .form-item-select {
+  background-color: transparent;
+  width: 90px;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+}
+
+input[type="date" i] {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+}
+
 .submit-button {
   width: 100%;
   background-color: #0062ba;
@@ -202,9 +260,6 @@ p {
   cursor: pointer;
   border: none;
   font-weight: 600;
-}
-
-input {
-  border: 2px solid white;
-  background-color: transparent;
+  font-size: 16px;
+  padding: 20px;
 }
