@@ -246,6 +246,10 @@ input {
   border: none;
 }
 
+option {
+  color: black !important;
+}
+
 input[type="date" i] {
   font-family: inherit;
   font-weight: 600;
