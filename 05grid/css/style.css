@@ -1,0 +1,136 @@
+html {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4em;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 30px;
+}
+
+/*----------------------
+----- CSS Grid ---------
+------------------------*/
+
+.container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 'box1 box2' 'box3 grid-box1' 'grid-box2 grid-box2';
+}
+
+.container .box1 {
+  grid-area: box1;
+}
+
+.container .box2 {
+  grid-area: box2;
+}
+
+.container .box3 {
+  grid-area: box3;
+}
+
+.container .box4 {
+  grid-area: box4;
+}
+
+.container .box5 {
+  grid-area: box5;
+}
+
+.container .box6 {
+  grid-area: box6;
+}
+
+.container .grid-box1 {
+  display: grid;
+  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  grid-area: grid-box1;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 'box4 box5' 'box6 box6';
+}
+
+.container .grid-box2 {
+  display: grid;
+  grid-column-gap: 80px;
+  grid-area: grid-box2;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 'box7 box8 box9 box10';
+}
+
+.container .box .blog-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 -1px 6px rgba(0, 0, 0, 0.23);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  min-width: 300px;
+  height: calc(100% - 40px);
+}
+
+.container .box.box3 .blog-card {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  height: calc(100% - 60px);
+}
+
+.box .blog-card .img-container {
+  flex-shrink: initial;
+  margin: 10px;
+  flex-basis: 400px;
+  width: 400px;
+  height: fit-content;
+}
+
+.box .blog-card .img-container img {
+  width: 100%;
+  min-width: 200px;
+}
+
+.box .blog-card .text-container {
+  flex-grow: 3;
+  margin: 10px;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 400px;
+}
+
+.box.box3 .blog-card .text-container {
+  min-width: 100%;
+  flex: 1;
+}
+
+.box .blog-card .text-container p {
+  margin-bottom: 20px;
+}
+
+.box .blog-card .text-container .likes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex: 1;
+}
+
+.box .blog-card .text-container .likes-container i {
+  font-size: 14px;
+}
+
+.box .blog-card .text-container .likes-container .likes-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
