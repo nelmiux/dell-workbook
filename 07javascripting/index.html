@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+    <!--
+      ==============================================
+      Title and Meta Tags
+      ===============================================
+    -->
+    <meta charset="utf-8" />
+    <title>Javascripting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta description="Javascripting" />
+    <meta name="Nelma Perera" content="07 Javascript Problems" />
+
+    <!--
+      ==============================================
+      CSS
+      ===============================================
+    -->
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- Compiled and minified materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!--
+      ==============================================
+      Font Icons
+      ===============================================
+    -->
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!--
+      ==============================================
+      JS
+      ===============================================
+    -->
+
+    <!--[if lt IE 9]> <script src="js/libs/respond.src.js"></script> <![endif]-->
+  </head>
+
+  <body>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br /><br />
+        <h1 class="header orange-text">07 Javascripting</h1>
+        <div class="row"><h5 class="header col s12 light">Javascript Problems</h5></div>
+        <div class="row">
+          <a
+            href="https://github.com/nelmiux/dell-workbook/tree/gh-pages/07javascripting/"
+            id="download-button"
+            class="btn-large waves-effect waves-light orange"
+            >Javascripting on Github</a
+          >
+        </div>
+        <br /><br />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">01 Introduction</h5>
+            <script src="https://embed.runkit.com" data-element-id="introduction"></script>
+            <div class="code" id="introduction">console.log('hello');</div>
+          </div>
+
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">02 Variables</h5>
+            <script src="https://embed.runkit.com" data-element-id="variables"></script>
+            <div class="code" id="variables">
+              const example = 'some string';
+              console.log(example);
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">03 Strings</h5>
+            <script src="https://embed.runkit.com" data-element-id="strings"></script>
+            <div class="code" id="strings">
+              const someString = 'this is a string';
+              console.log(someString);
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div class="section">
+        <div class="row">
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">04 String Length</h5>
+            <script src="https://embed.runkit.com" data-element-id="string-length"></script>
+            <div class="code" id="string-length">
+              const example = 'example string';
+              console.log(example.length);
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">05 Revising Strings</h5>
+            <script src="https://embed.runkit.com" data-element-id="revising-strings"></script>
+            <div class="code" id="revising-strings">
+              const pizza = 'pizza is alright';
+              console.log(pizza.replace('alright', 'wonderful'));
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">06 Numbers</h5>
+            <script src="https://embed.runkit.com" data-element-id="numbers"></script>
+            <div class="code" id="numbers">
+              const example = 123456789;
+              console.log(example);
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div class="section">
+        <div class="row">
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">07 Rounding Numbers</h5>
+            <script src="https://embed.runkit.com" data-element-id="rounding-numbers"></script>
+            <div class="code" id="rounding-numbers">
+              const roundUp = 1.5;
+              const rounded = Math.round(roundUp);
+              console.log(rounded);
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">08 Number to String</h5>
+            <script src="https://embed.runkit.com" data-element-id="number-to-string"></script>
+            <div class="code" id="number-to-string">
+              const n = 128;
+              console.log(n.toString());</div>
+          </div>
+
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">09 If Statement</h5>
+            <script src="https://embed.runkit.com" data-element-id="if-statement"></script>
+            <div class="code" id="if-statement">
+              const fruit = 'orange';
+              const tail = fruit.length > 5 ?
+                  'more than five characters.' :
+                  'five characters or less.';
+              const result = `The fruit name has ${tail}`;
+              console.log(result);
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div class="section">
+        <div class="row">
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">10 For Loop</h5>
+            <script src="https://embed.runkit.com" data-element-id="for-loop"></script>
+            <div class="code" id="for-loop">
+              let total = 0;
+              const limit = 10;
+              for (let i = 0; i < limit; ++i) {
+                total +=i;
+              }
+              console.log(total);
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">11 Arrays</h5>
+            <script src="https://embed.runkit.com" data-element-id="arrays"></script>
+            <div class="code" id="arrays">
+              const pizzaToppings = ['tomato sauce', 'cheese', 'pepperoni'];
+              console.log(pizzaToppings);
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">12 Array Filtering</h5>
+            <script src="https://embed.runkit.com" data-element-id="array-filtering"></script>
+            <div class="code" id="array-filtering">
+              const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+              const filtered = numbers.filter(n => n % 2 === 0);
+              console.log(filtered);
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div class="section">
+        <div class="row">
+          <div class="col s12 m4">
+            <h5 class="light-blue-text">13 Accesing Array Values</h5>
+            <script src="https://embed.runkit.com" data-element-id="accessing-array-values"></script>
+            <div class="code" id="accessing-array-values">
+              let food = ['apple', 'pizza', 'pear'];
+              console.log(food[1]);
+              </div>
+            </div>
+
+            <div class="col s12 m4">
+              <h5 class="light-blue-text">14 Looping Through Arrays</h5>
+              <script src="https://embed.runkit.com" data-element-id="looping-through-arrays"></script>
+              <div class="code" id="looping-through-arrays">
+                const pets = ['cat', 'dog', 'rat'];
+                pets.forEach(
+                  (x, i) => (pets[i] = `${x}s`)
+                );
+                console.log(pets);
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <h5 class="light-blue-text">15 Objects</h5>
+              <script src="https://embed.runkit.com" data-element-id="objects"></script>
+              <div class="code" id="objects">
+                const pizza = {
+                  toppings: [
+                    'cheese',
+                    'sauce',
+                    'pepperoni'
+                  ],
+                  crust: 'deep dish',
+                  serves: 2
+                };
+                console.log(pizza);
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="section">
+          <div class="row">
+            <div class="col s12 m4">
+              <h5 class="light-blue-text">16 Object Properties</h5>
+              <script src="https://embed.runkit.com" data-element-id="object-properties"></script>
+              <div class="code" id="object-properties">
+                const food = {
+                  types: 'only pizza'
+                };
+                console.log(food.types);
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <h5 class="light-blue-text">17 Functions</h5>
+              <script src="https://embed.runkit.com" data-element-id="functions"></script>
+              <div class="code" id="functions">
+                const eat = food => `${food} tasted really good.`;
+                console.log(eat('bananas'));
+              </div>
+            </div>
+            <div class="col s12 m4">
+              <h5 class="light-blue-text">18 Function Arguments</h5>
+              <script src="https://embed.runkit.com" data-element-id="function-arguments"></script>
+              <div class="code" id="function-arguments">
+                const math = (a, b, c) => a + b * c;
+                console.log(math(53, 61, 67));
+              </div>
+            </div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="section">
+          <div class="row">
+            <div class="col s12 m4">
+              <h5 class="light-blue-text">19 Scope</h5>
+              <script src="https://embed.runkit.com" data-element-id="scope"></script>
+              <div class="code" id="scope">
+                var a = 1, b = 2, c = 3;
+                (function firstFunction() {
+                  var b = 5, c = 6;
+                  (function secondFunction() {
+                    var b = 8;
+                    console.log('a: ' + a + ', b: ' + b + ', c: ' + c);
+                    (function thirdFunction() {
+                      var a = 7, c = 9;
+                      (function fourthFunction() {
+                        var a = 1, c = 8;
+                      })();
+                    })();
+                  })();
+                })();
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      ==============================================
+      JS
+      ===============================================
+    -->
+    <!-- Compiled and minified materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
