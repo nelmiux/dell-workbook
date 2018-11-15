@@ -147,7 +147,7 @@
             <script src="https://embed.runkit.com" data-element-id="if-statement"></script>
             <div class="code" id="if-statement">
               const fruit = 'orange';
-              const tail = fruit.length > 5 ?
+              const tail = fruit.length &gt; 5 ?
                   'more than five characters.' :
                   'five characters or less.';
               const result = `The fruit name has ${tail}`;
@@ -165,7 +165,7 @@
             <div class="code" id="for-loop">
               let total = 0;
               const limit = 10;
-              for (let i = 0; i < limit; ++i) {
+              for (let i = 0; i &lt; limit; ++i) {
                 total += i;
               }
               console.log(total);
@@ -186,7 +186,7 @@
             <script src="https://embed.runkit.com" data-element-id="array-filtering"></script>
             <div class="code" id="array-filtering">
               const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-              const filtered = numbers.filter(n => n % 2 === 0);
+              const filtered = numbers.filter(n =&gt; n % 2 === 0);
               console.log(filtered);
             </div>
           </div>
@@ -210,7 +210,7 @@
               <div class="code" id="looping-through-arrays">
                 const pets = ['cat', 'dog', 'rat'];
                 pets.forEach(
-                  (x, i) => (pets[i] = `${x}s`)
+                  (x, i) =&gt; (pets[i] = `${x}s`)
                 );
                 console.log(pets);
               </div>
@@ -250,7 +250,7 @@
               <h5 class="light-blue-text">17 Functions</h5>
               <script src="https://embed.runkit.com" data-element-id="functions"></script>
               <div class="code" id="functions">
-                const eat = food => `${food} tasted really good.`;
+                const eat = food =&gt; `${food} tasted really good.`;
                 console.log(eat('bananas'));
               </div>
             </div>
@@ -258,7 +258,7 @@
               <h5 class="light-blue-text">18 Function Arguments</h5>
               <script src="https://embed.runkit.com" data-element-id="function-arguments"></script>
               <div class="code" id="function-arguments">
-                const math = (a, b, c) => a + b * c;
+                const math = (a, b, c) =&gt; a + b * c;
                 console.log(math(53, 61, 67));
               </div>
             </div>
