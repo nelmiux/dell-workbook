@@ -14,5 +14,6 @@
     "img-req-alt": false,
     "attr-bans": false,
     "tag-close": true,
-    "tag-name-match": true
+    "tag-name-match": true,
+    "raw-ignore-regex": /( [<>] )/
 }
