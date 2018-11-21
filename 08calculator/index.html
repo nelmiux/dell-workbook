@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+    <!--
+      ==============================================
+      Title and Meta Tags
+      ===============================================
+    -->
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta description="Calculator" />
+    <meta name="Nelma Perera" content="08 Calculator" />
+
+    <!--
+      ==============================================
+      CSS
+      ===============================================
+    -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!--
+      ==============================================
+      JS
+      ===============================================
+    -->
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <div id="calc">
+      <input type="text" id="results" />
+      <table>
+        <tr>
+          <td class="button" onclick="doOp('1')">1</td>
+          <td class="button" onclick="doOp('2')">2</td>
+          <td class="button" onclick="doOp('3')">3</td>
+          <td class="button" onclick="binaryOp('+')">+</td>
+        </tr>
+        <tr>
+          <td class="button" onclick="doOp('4')">4</td>
+          <td class="button" onclick="doOp('5')">5</td>
+          <td class="button" onclick="doOp('6')">6</td>
+          <td class="button" onclick="binaryOp('-')">-</td>
+        </tr>
+        <tr>
+          <td class="button" onclick="doOp('7')">7</td>
+          <td class="button" onclick="doOp('8')">8</td>
+          <td class="button" onclick="doOp('9')">9</td>
+          <td class="button" onclick="binaryOp('*')">*</td>
+        </tr>
+        <tr>
+          <td class="button" onclick="unaryOp('*', '-1')">+/-</td>
+          <td class="button" onclick="doOp('0')">0</td>
+          <td class="button" onclick="equals()">=</td>
+          <td class="button" onclick="binaryOp('/')">/</td>
+        </tr>
+        <tr>
+          <td class="button" colspan="2" onclick="deleteLast()">Delete</td>
+          <td class="button" colspan="2" onclick="clearResults()">Clear</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
