@@ -3,9 +3,9 @@ input {
   margin-left: 2px
 }
 
-.button {
+.button,
+.operator {
   border: 1px solid black;
   width: 26px;
   text-align: center;
-  cursor: pointer;
-}
+  cursor: pointer;}
