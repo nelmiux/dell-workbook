@@ -18,47 +18,67 @@
       CSS
       ===============================================
     -->
-    <link rel="stylesheet" href="./style.css" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <!-- Compiled and minified materialize CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+    <!--
+      ==============================================
+      Font Icons
+      ===============================================
+    -->
+    <!-- Import Google Icon Font -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      type="text/css"
+      rel="stylesheet"
+    />
 
     <!--
       ==============================================
       JS
       ===============================================
     -->
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
   </head>
 
   <body>
-    <div id="calc">
+    <div id="calc" class="card">
       <input type="text" id="results" />
       <table>
         <tr>
-          <td class="button">1</td>
-          <td class="button">2</td>
-          <td class="button">3</td>
-          <td class="button">+</td>
+          <td><a class="button waves-effect waves-light btn">1</a></td>
+          <td><a class="button waves-effect waves-light btn">2</a></td>
+          <td><a class="button waves-effect waves-light btn">3</a></td>
+          <td><a class="button waves-effect waves-light btn blue">+</a></td>
         </tr>
         <tr>
-          <td class="button">4</td>
-          <td class="button">5</td>
-          <td class="button">6</td>
-          <td class="button">-</td>
+          <td><a class="button waves-effect waves-light btn">4</a></td>
+          <td><a class="button waves-effect waves-light btn">5</a></td>
+          <td><a class="button waves-effect waves-light btn">6</a></td>
+          <td><a class="button waves-effect waves-light btn blue">-</a></td>
         </tr>
         <tr>
-          <td class="button">7</td>
-          <td class="button">8</td>
-          <td class="button">9</td>
-          <td class="button">*</td>
+          <td><a class="button waves-effect waves-light btn">7</a></td>
+          <td><a class="button waves-effect waves-light btn">8</a></td>
+          <td><a class="button waves-effect waves-light btn">9</a></td>
+          <td><a class="button waves-effect waves-light btn blue">*</a></td>
         </tr>
         <tr>
-          <td class="operator">+/-</td>
-          <td class="button">0</td>
-          <td class="operator">=</td>
-          <td class="button">/</td>
+          <td><a class="operator waves-effect waves-light btn blue">+/-</a></td>
+          <td><a class="button waves-effect waves-light btn">0</a></td>
+          <td><a class="operator waves-effect waves-light btn blue">=</a></td>
+          <td><a class="button waves-effect waves-light btn blue">/</a></td>
         </tr>
         <tr>
-          <td class="operator" colspan="2">Delete</td>
-          <td class="operator" colspan="2">Clear</td>
+          <td colspan="2"><a class="operator waves-effect waves-light btn red">Delete</a></td>
+          <td colspan="2"><a class="operator waves-effect waves-light btn red">Clear</a></td>
         </tr>
       </table>
     </div>
