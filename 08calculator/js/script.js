@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const text = ev.target.innerHTML;
       const previous = document.querySelector('#results').value;
       if (previous === '0') {
-        document.querySelector('#results').value = text;
+        if (parseInt(text)) {
+          document.querySelector('#results').value = text;
+        }
         return;
       }
       const lastCh = previous[previous.length - 1];
