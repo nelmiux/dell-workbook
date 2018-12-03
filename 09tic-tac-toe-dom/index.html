@@ -8,7 +8,10 @@
     -->
     <meta charset="utf-8" />
     <title>Tic Tac Toe DOM</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta description="TicTacToe DOM" />
     <meta name="Nelma Perera" content="09 Tic Tac Toe DOM" />
@@ -39,28 +42,33 @@
       type="text/css"
       rel="stylesheet"
     />
+  </head>
 
+  <body>
+    <div class="section no-pad-bot" id="index-banner">
+      <h1 class="header orange-text">09 Tic Tac Toe</h1>
+      <div class="main">
+        <div class="board">
+          <div data-cell="0"></div>
+          <div data-cell="1"></div>
+          <div data-cell="2"></div>
+          <div data-cell="3"></div>
+          <div data-cell="4"></div>
+          <div data-cell="5"></div>
+          <div data-cell="6"></div>
+          <div data-cell="7"></div>
+          <div data-cell="8"></div>
+        </div>
+      </div>
+      <button id="clear" class="button waves-effect waves-light btn red">
+        New Game
+      </button>
+    </div>
     <!--
       ==============================================
       JS
       ===============================================
     -->
     <script src="./js/script.js"></script>
-  </head>
-  <body>
-    <div id="board">
-      <div data-cell="0"></div>
-      <div data-cell="1"></div>
-      <div data-cell="2"></div>
-      <div data-cell="3"></div>
-      <div data-cell="4"></div>
-      <div data-cell="5"></div>
-      <div data-cell="6"></div>
-      <div data-cell="7"></div>
-      <div data-cell="8"></div>
-    </div>
-    <div id="announce-winner"></div>
-    <button id="clear">Clear Board</button>
-    <script src="./script.js"></script>
   </body>
 </html>
