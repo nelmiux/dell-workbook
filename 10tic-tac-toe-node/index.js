@@ -6,9 +6,25 @@ const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-let board = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']];
 
-let playerTurn = 'X';
+let board = [];
+
+let player = '';
+
+const players = {
+  false: 'O',
+  true: 'X'
+};
+
+let count = 0;
+
+let finish = false;
+
+function init() {
+  console.clear();
+  board = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']];
+  player = !((Math.random() + 0.5) | 0);
+}
 
 function printBoard() {
   console.log('   0  1  2');
@@ -20,33 +36,70 @@ function printBoard() {
 }
 
 function horizontalWin() {
-  // Your code here
+  return board.some(row => row.every(column => column === players[player]));
 }
 
 function verticalWin() {
-  // Your code here
+  return Object.keys(board[0])
+    .map(column => board.map(row => row[column]))
+    .some(newRow => newRow.every(newColumn => newColumn === players[player]));
 }
 
 function diagonalWin() {
-  // Your code here
+  return board.every(
+    (_, rowIndex) =>
+      board[rowIndex][rowIndex] === players[player] ||
+      board[rowIndex][2 - rowIndex] === players[player]
+  );
 }
 
 function checkForWin() {
-  // Your code here
+  return horizontalWin() || verticalWin() || diagonalWin();
 }
 
 function ticTacToe(row, column) {
-  board[row][column] = playerTurn;
+  try {
+    if (board[row][column] !== ' ') {
+      console.log('This cell is already taken, please try again');
+      return;
+    }
+    board[row][column] = players[player];
+  } catch (e) {
+    console.log('Invalid entry, please try again');
+    return;
+  }
+
+  ++count;
+  const message = checkForWin() ? 'Player ' + players[player] + ' Win!' : count > 8 ? 'Draw!' : '';
+  finish = message;
+  if (finish) {
+    printBoard();
+    console.log(message);
+    newGamePrompt();
+    return;
+  }
+
+  player = !player;
 }
 
 function getPrompt() {
+  if (count === 0) {
+    init();
+  }
   printBoard();
-  console.log("It's Player " + playerTurn + "'s turn.");
+  console.log("It's Player " + players[player] + "'s turn.");
   rl.question('row: ', row => {
     rl.question('column: ', column => {
       ticTacToe(row, column);
-      getPrompt();
+      finish || getPrompt();
     });
+  });
+}
+
+function newGamePrompt() {
+  rl.question('Do you want to play again (Y/N)? ', isNewGame => {
+    const ng = isNewGame.toLowerCase();
+    return ng === 'y' ? ((count = 0), getPrompt()) : ng === 'n' ? process.exit(0) : newGamePrompt();
   });
 }
 

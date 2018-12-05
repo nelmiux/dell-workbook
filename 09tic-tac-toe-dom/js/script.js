@@ -1,7 +1,7 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-  let player = true;
+  let player = !((Math.random() + 0.5) | 0);
   let count = 0;
   const players = {
     false: '🛸',
@@ -43,9 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function checkWin() {
     const isWin = winningMoves.some(move =>
       move.every(
-        cell =>
-          document.querySelector(`[data-cell="${cell}"]`).innerHTML ===
-          players[player]
+        cell => document.querySelector(`[data-cell="${cell}"]`).innerHTML === players[player]
       )
     );
     if (isWin) {
