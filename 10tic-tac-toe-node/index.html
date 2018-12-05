@@ -95,18 +95,18 @@
             }
 
             function horizontalWin() {
-              return board.some(row =&gt row.every(column =&gt column === players[player]));
+              return board.some(row =&gt; row.every(column =&gt; column === players[player]));
             }
 
             function verticalWin() {
               return Object.keys(board[0])
-                .map(column =&gt board.map(row =&gt row[column]))
-                .some(newRow =&gt newRow.every(newColumn =&gt newColumn === players[player]));
+                .map(column =&gt; board.map(row =&gt; row[column]))
+                .some(newRow =&gt; newRow.every(newColumn =&gt; newColumn === players[player]));
             }
 
             function diagonalWin() {
               return board.every(
-                (_, rowIndex) =&gt
+                (_, rowIndex) =&gt;
                   board[rowIndex][rowIndex] === players[player] ||
                   board[rowIndex][2 - rowIndex] === players[player]
               );
@@ -129,7 +129,7 @@
               }
 
               ++count;
-              const message = checkForWin() ? 'Player ' + players[player] + ' Win!' : count &gt 8 ? 'Draw!' : '';
+              const message = checkForWin() ? 'Player ' + players[player] + ' Win!' : count &gt; 8 ? 'Draw!' : '';
               finish = message;
               if (finish) {
                 printBoard();
@@ -144,8 +144,8 @@
             function getPrompt() {
               printBoard();
               console.log("It's Player " + players[player] + "'s turn.");
-              rl.question('row: ', row =&gt {
-                rl.question('column: ', column =&gt {
+              rl.question('row: ', row =&gt; {
+                rl.question('column: ', column =&gt; {
                   ticTacToe(row, column);
                   finish || getPrompt();
                 });
@@ -153,7 +153,7 @@
             }
 
             function newGamePrompt() {
-              rl.question('Do you want to play again (Y/N)? ', isNewGame =&gt {
+              rl.question('Do you want to play again (Y/N)? ', isNewGame =&gt; {
                 const ng = isNewGame.toLowerCase();
                 return ng === 'y' ? (init(), getPrompt()) : ng === 'n' ? process.exit(0) : newGamePrompt();
               });
