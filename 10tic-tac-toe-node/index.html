@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+    <!--
+      ==============================================
+      Title and Meta Tags
+      ===============================================
+    -->
+    <meta charset="utf-8" />
+    <title>Tic Tac Toe (node)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta description="Tic Tac Toe (node)" />
+    <meta name="Nelma Perera" content="10 Tic Tac Toe (node)" />
+
+    <!--
+      ==============================================
+      CSS
+      ===============================================
+    -->
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- Compiled and minified materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
+
+    <!--
+      ==============================================
+      Font Icons
+      ===============================================
+    -->
+    <!-- Import Google Icon Font -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!--
+      ==============================================
+      JS
+      ===============================================
+    -->
+
+    <!--[if lt IE 9]> <script src="js/libs/respond.src.js"></script> <![endif]-->
+  </head>
+
+  <body>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br /><br />
+        <h1 class="header orange-text">10 Tic Tac Toe (node)</h1>
+        <div class="row">
+          <a
+            href="https://github.com/nelmiux/dell-workbook/tree/gh-pages/10tic-tac-toe-node/"
+            id="download-button"
+            class="btn-large waves-effect waves-light orange"
+            >See on Github</a
+          >
+        </div>
+        <br /><br />
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <div class="row">
+          <div id="mocha"></div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      ==============================================
+      JS
+      ===============================================
+    -->
+    <!-- Compiled and minified materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+    <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
+    <script src="./js/index.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <script type="module" src="./js/index.test.js"></script>
+    <script type="module">
+      mocha.checkLeaks();
+      mocha.run();
+  </script>
+  </body>
+</html>

@@ -9,21 +9,24 @@ const rl = readline.createInterface({
 
 let board = [];
 
-let player = '';
+let player;
 
 const players = {
-  false: 'O',
-  true: 'X'
+  true: 'X',
+  false: 'O'
 };
 
 let count = 0;
 
 let finish = false;
 
+init();
+
 function init() {
   console.clear();
+  count = 0;
   board = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']];
-  player = !((Math.random() + 0.5) | 0);
+  player = true;
 }
 
 function printBoard() {
@@ -83,9 +86,6 @@ function ticTacToe(row, column) {
 }
 
 function getPrompt() {
-  if (count === 0) {
-    init();
-  }
   printBoard();
   console.log("It's Player " + players[player] + "'s turn.");
   rl.question('row: ', row => {
@@ -99,7 +99,7 @@ function getPrompt() {
 function newGamePrompt() {
   rl.question('Do you want to play again (Y/N)? ', isNewGame => {
     const ng = isNewGame.toLowerCase();
-    return ng === 'y' ? ((count = 0), getPrompt()) : ng === 'n' ? process.exit(0) : newGamePrompt();
+    return ng === 'y' ? (init(), getPrompt()) : ng === 'n' ? process.exit(0) : newGamePrompt();
   });
 }
 
