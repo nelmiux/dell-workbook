@@ -1,0 +1,100 @@
+/*-----------------------
+----- Basic Styles -----
+-------------------------*/
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 30px auto;
+  max-width: 1280px;
+  width: 90%;
+  height: 100px;
+}
+
+.orange-text {
+  color: #ff9800 !important;
+}
+
+h1 {
+  font-size: 36px;
+  margin-left: -15px !important;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.btn-large {
+  height: 54px;
+  line-height: 54px;
+  font-size: 15px;
+  padding: 0 28px;
+  text-decoration: none;
+  color: #fff;
+  webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.orange {
+  background-color: #ff9800 !important;
+}
+
+pre {
+  height: 400px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 30px auto;
+  max-width: 1280px;
+  width: 90%;
+  height: 300px;
+  display: block;
+}
+
+.details {
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#report {
+  height: 500px;
+}
+
+@media (min-width: 768px) {
+  .container,
+  pre {
+    width: 750px;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .container,
+  pre {
+    width: 85%;
+  }
+}

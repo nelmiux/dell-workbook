@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US" class="no-js">
+<html lang="en">
   <head>
     <!--
       ==============================================
@@ -19,14 +19,11 @@
       ===============================================
     -->
     <!-- Reset CSS -->
-    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="./assets/reset.css" />
     <!-- Compiled and minified materialize CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="stylesheet" href="./assets/app.css" />
+    <link rel="stylesheet" href="./assets/prism.css" />
 
     <!--
       ==============================================
@@ -35,21 +32,15 @@
     -->
     <!-- Import Google Icon Font -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-    <!--
-      ==============================================
-      JS
-      ===============================================
-    -->
-
-    <!--[if lt IE 9]> <script src="js/libs/respond.src.js"></script> <![endif]-->
   </head>
-
-  <body>
-    <div class="section no-pad-bot" id="index-banner">
+  <body
+    data-raw="{&quot;stats&quot;:{&quot;suites&quot;:1,&quot;tests&quot;:6,&quot;passes&quot;:6,&quot;pending&quot;:0,&quot;failures&quot;:0,&quot;start&quot;:&quot;2018-12-05T05:13:43.110Z&quot;,&quot;end&quot;:&quot;2018-12-05T05:13:43.124Z&quot;,&quot;duration&quot;:14,&quot;testsRegistered&quot;:6,&quot;passPercent&quot;:100,&quot;pendingPercent&quot;:0,&quot;other&quot;:0,&quot;hasOther&quot;:false,&quot;skipped&quot;:0,&quot;hasSkipped&quot;:false,&quot;passPercentClass&quot;:&quot;success&quot;,&quot;pendingPercentClass&quot;:&quot;danger&quot;},&quot;suites&quot;:{&quot;uuid&quot;:&quot;4fd2b39e-21fc-4366-85aa-f63dbc1e6de8&quot;,&quot;title&quot;:&quot;&quot;,&quot;fullFile&quot;:&quot;&quot;,&quot;file&quot;:&quot;&quot;,&quot;beforeHooks&quot;:[],&quot;afterHooks&quot;:[],&quot;tests&quot;:[],&quot;suites&quot;:[{&quot;uuid&quot;:&quot;5c563762-f208-4d50-84f3-e2414b01cbcf&quot;,&quot;title&quot;:&quot;#ticTacToe()&quot;,&quot;fullFile&quot;:&quot;C:\\Learning\\CodeAcademy\\dell-workbook\\10tic-tac-toe-node\\js\\index.js&quot;,&quot;file&quot;:&quot;\\10tic-tac-toe-node\\js\\index.js&quot;,&quot;beforeHooks&quot;:[],&quot;afterHooks&quot;:[],&quot;tests&quot;:[{&quot;title&quot;:&quot;should place mark on the board&quot;,&quot;fullTitle&quot;:&quot;#ticTacToe() should place mark on the board&quot;,&quot;timedOut&quot;:false,&quot;duration&quot;:1,&quot;state&quot;:&quot;passed&quot;,&quot;speed&quot;:&quot;fast&quot;,&quot;pass&quot;:true,&quot;fail&quot;:false,&quot;pending&quot;:false,&quot;code&quot;:&quot;ticTacToe(1, 1);\nassert.deepEqual(board, [[&#x27; &#x27;, &#x27; &#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27;X&#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27; &#x27;, &#x27; &#x27;]]);&quot;,&quot;err&quot;:{},&quot;isRoot&quot;:false,&quot;uuid&quot;:&quot;fc8b27ad-438c-45e8-89ef-60c36c1a4915&quot;,&quot;isHook&quot;:false,&quot;skipped&quot;:false},{&quot;title&quot;:&quot;should alternate between players&quot;,&quot;fullTitle&quot;:&quot;#ticTacToe() should alternate between players&quot;,&quot;timedOut&quot;:false,&quot;duration&quot;:0,&quot;state&quot;:&quot;passed&quot;,&quot;speed&quot;:&quot;fast&quot;,&quot;pass&quot;:true,&quot;fail&quot;:false,&quot;pending&quot;:false,&quot;code&quot;:&quot;ticTacToe(0, 0);\nassert.deepEqual(board, [[&#x27;O&#x27;, &#x27; &#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27;X&#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27; &#x27;, &#x27; &#x27;]]);&quot;,&quot;err&quot;:{},&quot;isRoot&quot;:false,&quot;uuid&quot;:&quot;1766f37e-91f9-42c6-a5a5-855df305ec6e&quot;,&quot;isHook&quot;:false,&quot;skipped&quot;:false},{&quot;title&quot;:&quot;should check for vertical wins&quot;,&quot;fullTitle&quot;:&quot;#ticTacToe() should check for vertical wins&quot;,&quot;timedOut&quot;:false,&quot;duration&quot;:0,&quot;state&quot;:&quot;passed&quot;,&quot;speed&quot;:&quot;fast&quot;,&quot;pass&quot;:true,&quot;fail&quot;:false,&quot;pending&quot;:false,&quot;code&quot;:&quot;board = [[&#x27; &#x27;, &#x27;X&#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27;X&#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27;X&#x27;, &#x27; &#x27;]];\nassert.equal(verticalWin(), true);&quot;,&quot;err&quot;:{},&quot;isRoot&quot;:false,&quot;uuid&quot;:&quot;79a55519-38a8-45f8-ac04-4f6038a43584&quot;,&quot;isHook&quot;:false,&quot;skipped&quot;:false},{&quot;title&quot;:&quot;should check for horizontal wins&quot;,&quot;fullTitle&quot;:&quot;#ticTacToe() should check for horizontal wins&quot;,&quot;timedOut&quot;:false,&quot;duration&quot;:0,&quot;state&quot;:&quot;passed&quot;,&quot;speed&quot;:&quot;fast&quot;,&quot;pass&quot;:true,&quot;fail&quot;:false,&quot;pending&quot;:false,&quot;code&quot;:&quot;board = [[&#x27;X&#x27;, &#x27;X&#x27;, &#x27;X&#x27;], [&#x27; &#x27;, &#x27; &#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27; &#x27;, &#x27; &#x27;]];\nassert.equal(horizontalWin(), true);&quot;,&quot;err&quot;:{},&quot;isRoot&quot;:false,&quot;uuid&quot;:&quot;cb599fae-3156-49a2-b940-462652d2017b&quot;,&quot;isHook&quot;:false,&quot;skipped&quot;:false},{&quot;title&quot;:&quot;should check for diagonal wins&quot;,&quot;fullTitle&quot;:&quot;#ticTacToe() should check for diagonal wins&quot;,&quot;timedOut&quot;:false,&quot;duration&quot;:0,&quot;state&quot;:&quot;passed&quot;,&quot;speed&quot;:&quot;fast&quot;,&quot;pass&quot;:true,&quot;fail&quot;:false,&quot;pending&quot;:false,&quot;code&quot;:&quot;board = [[&#x27;X&#x27;, &#x27; &#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27;X&#x27;, &#x27; &#x27;], [&#x27; &#x27;, &#x27; &#x27;, &#x27;X&#x27;]];\nassert.equal(diagonalWin(), true);&quot;,&quot;err&quot;:{},&quot;isRoot&quot;:false,&quot;uuid&quot;:&quot;3965600e-cb1c-4285-80d2-aadbe03a88b1&quot;,&quot;isHook&quot;:false,&quot;skipped&quot;:false},{&quot;title&quot;:&quot;should detect a win&quot;,&quot;fullTitle&quot;:&quot;#ticTacToe() should detect a win&quot;,&quot;timedOut&quot;:false,&quot;duration&quot;:0,&quot;state&quot;:&quot;passed&quot;,&quot;speed&quot;:&quot;fast&quot;,&quot;pass&quot;:true,&quot;fail&quot;:false,&quot;pending&quot;:false,&quot;code&quot;:&quot;assert.equal(checkForWin(), true);&quot;,&quot;err&quot;:{},&quot;isRoot&quot;:false,&quot;uuid&quot;:&quot;3af840a2-f4be-418f-bdec-fb7dbfbaa198&quot;,&quot;isHook&quot;:false,&quot;skipped&quot;:false}],&quot;suites&quot;:[],&quot;passes&quot;:[&quot;fc8b27ad-438c-45e8-89ef-60c36c1a4915&quot;,&quot;1766f37e-91f9-42c6-a5a5-855df305ec6e&quot;,&quot;79a55519-38a8-45f8-ac04-4f6038a43584&quot;,&quot;cb599fae-3156-49a2-b940-462652d2017b&quot;,&quot;3965600e-cb1c-4285-80d2-aadbe03a88b1&quot;,&quot;3af840a2-f4be-418f-bdec-fb7dbfbaa198&quot;],&quot;failures&quot;:[],&quot;pending&quot;:[],&quot;skipped&quot;:[],&quot;duration&quot;:1,&quot;root&quot;:false,&quot;rootEmpty&quot;:false,&quot;_timeout&quot;:2000}],&quot;passes&quot;:[],&quot;failures&quot;:[],&quot;pending&quot;:[],&quot;skipped&quot;:[],&quot;duration&quot;:0,&quot;root&quot;:true,&quot;rootEmpty&quot;:true,&quot;_timeout&quot;:2000},&quot;copyrightYear&quot;:2018}"
+    data-config="{&quot;reportFilename&quot;:&quot;mochawesome&quot;,&quot;reportDir&quot;:&quot;mochawesome-report&quot;,&quot;reportTitle&quot;:&quot;Tic Tac Toe Tests&quot;,&quot;reportPageTitle&quot;:&quot;Mochawesome Report&quot;,&quot;inline&quot;:false,&quot;inlineAssets&quot;:false,&quot;cdn&quot;:false,&quot;charts&quot;:true,&quot;enableCharts&quot;:true,&quot;code&quot;:true,&quot;enableCode&quot;:true,&quot;autoOpen&quot;:false,&quot;overwrite&quot;:true,&quot;timestamp&quot;:false,&quot;ts&quot;:false,&quot;showPassed&quot;:true,&quot;showFailed&quot;:true,&quot;showPending&quot;:true,&quot;showSkipped&quot;:false,&quot;showHooks&quot;:&quot;failed&quot;,&quot;saveJson&quot;:true,&quot;saveHtml&quot;:true,&quot;dev&quot;:false,&quot;assetsDir&quot;:&quot;mochawesome-report\\assets&quot;,&quot;jsonFile&quot;:&quot;&quot;,&quot;htmlFile&quot;:&quot;&quot;}"
+  >
+    <div class="content">
       <div class="container">
         <br /><br />
-        <h1 class="header orange-text">10 Tic Tac Toe (node)</h1>
+        <h1 class="orange-text">10 Tic Tac Toe (node)</h1>
         <div class="row">
           <a
             href="https://github.com/nelmiux/dell-workbook/tree/gh-pages/10tic-tac-toe-node/js"
@@ -60,16 +51,118 @@
         </div>
         <br /><br />
       </div>
+      <div id="report"></div>
+      <pre class="language-javascript line-numbers">
+          <code class="language-javascript">'use strict';
+
+            const assert = require('assert');
+            const readline = require('readline');
+            const rl = readline.createInterface({
+              input: process.stdin,
+              output: process.stdout
+            });
+
+            let board = [];
+
+            let player;
+
+            const players = {
+              true: 'X',
+              false: 'O'
+            };
+
+            let count = 0;
+
+            let finish = false;
+
+            init();
+
+            function init() {
+              console.clear();
+              count = 0;
+              board = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']];
+              player = true;
+            }
+
+            function printBoard() {
+              console.log('   0  1  2');
+              console.log('0 ' + board[0].join(' | '));
+              console.log('  ---------');
+              console.log('1 ' + board[1].join(' | '));
+              console.log('  ---------');
+              console.log('2 ' + board[2].join(' | '));
+            }
+
+            function horizontalWin() {
+              return board.some(row => row.every(column => column === players[player]));
+            }
+
+            function verticalWin() {
+              return Object.keys(board[0])
+                .map(column => board.map(row => row[column]))
+                .some(newRow => newRow.every(newColumn => newColumn === players[player]));
+            }
+
+            function diagonalWin() {
+              return board.every(
+                (_, rowIndex) =>
+                  board[rowIndex][rowIndex] === players[player] ||
+                  board[rowIndex][2 - rowIndex] === players[player]
+              );
+            }
+
+            function checkForWin() {
+              return horizontalWin() || verticalWin() || diagonalWin();
+            }
+
+            function ticTacToe(row, column) {
+              try {
+                if (board[row][column] !== ' ') {
+                  console.log('This cell is already taken, please try again');
+                  return;
+                }
+                board[row][column] = players[player];
+              } catch (e) {
+                console.log('Invalid entry, please try again');
+                return;
+              }
+
+              ++count;
+              const message = checkForWin() ? 'Player ' + players[player] + ' Win!' : count > 8 ? 'Draw!' : '';
+              finish = message;
+              if (finish) {
+                printBoard();
+                console.log(message);
+                newGamePrompt();
+                return;
+              }
+
+              player = !player;
+            }
+
+            function getPrompt() {
+              printBoard();
+              console.log("It's Player " + players[player] + "'s turn.");
+              rl.question('row: ', row => {
+                rl.question('column: ', column => {
+                  ticTacToe(row, column);
+                  finish || getPrompt();
+                });
+              });
+            }
+
+            function newGamePrompt() {
+              rl.question('Do you want to play again (Y/N)? ', isNewGame => {
+                const ng = isNewGame.toLowerCase();
+                return ng === 'y' ? (init(), getPrompt()) : ng === 'n' ? process.exit(0) : newGamePrompt();
+              });
+            }
+          </code>
+      </pre>
     </div>
 
-    <div class="container">
-      <div class="section">
-        <div class="row">
-          <div id="mocha"></div>
-        </div>
-      </div>
-    </div>
-
+    <script src="./assets/app.js"></script>
+    <script src="./assets/prism.js"></script>
     <!--
       ==============================================
       JS
@@ -77,14 +170,5 @@
     -->
     <!-- Compiled and minified materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
-    <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
-    <script src="./js/index.js"></script>
-    <script>mocha.setup('bdd')</script>
-    <script type="module" src="./js/index.test.js"></script>
-    <script type="module">
-      mocha.checkLeaks();
-      mocha.run();
-  </script>
   </body>
 </html>
