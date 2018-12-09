@@ -2,6 +2,13 @@
 
 const assert = require('assert');
 
+Array.prototype.swap = function(x, y) {
+  const temp = this[x];
+  this[x] = this[y];
+  this[y] = temp;
+  return this;
+};
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -9,17 +16,33 @@ function getRandomInt(min, max) {
 }
 
 let arr = [];
+let sorted = false;
 
-for (let i = 0; i < 1000; i++) {
-  arr.push(getRandomInt(0, 1000));
+for (let i = 0; i < 10; i++) {
+  arr.push(getRandomInt(0, 10));
 }
 
 function bubbleSort(arr) {
-  // Your code here
+  do {
+    sorted = true;
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        arr.swap(i, i + 1);
+        sorted = false;
+      }
+    }
+  } while (!sorted);
+  return arr;
 }
 
 function mergeSort(arr) {
-  // Your code here
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  const midIdx = arr.length / 2;
+  const arr1 = mergeSort(arr.slice(0, midIdx));
+  const arr2 = mergeSort(arr.slice(midIdx));
 }
 
 function binarySearch(arr, item) {
@@ -29,7 +52,6 @@ function binarySearch(arr, item) {
 // Tests
 
 if (typeof describe === 'function') {
-
   function comparator(a, b) {
     if (Number(a) < Number(b)) return -1;
     if (Number(a) > Number(b)) return 1;
@@ -60,9 +82,7 @@ if (typeof describe === 'function') {
       assert.equal(idx, false);
     });
   });
-
 } else {
-
-  console.log('Run the tests!')
-
+  console.log('Run the tests!');
+  //bubbleSort(arr);
 }

@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "stylelint ./**/*.css && eslint . && htmllint {*.html,./**/*.html}",
     "start": "cd . && http-server -c-1",
-    "test": "mocha --reporter mochawesome",
+    "test": "mocha",
     "node-sass": "node-sass --output-style=expanded",
     "node-sass-watch": "node-sass --output-style=expanded --watch"
   },
@@ -29,7 +29,7 @@
     "mocha": "^5.2.0",
     "node-sass": "^4.9.3",
     "postcss": "^6.0.23",
-    "stylelint": "^9.5.0"
+    "stylelint": "^9.9.0"
   },
   "devDependencies": {
     "mochawesome": "^3.1.1"

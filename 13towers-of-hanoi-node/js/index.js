@@ -7,6 +7,8 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+const winPos = [4, 3, 2, 1];
+
 let stacks = {
   a: [4, 3, 2, 1],
   b: [],
@@ -14,36 +16,48 @@ let stacks = {
 };
 
 function printStacks() {
-  console.log("a: " + stacks.a);
-  console.log("b: " + stacks.b);
-  console.log("c: " + stacks.c);
+  console.log('a: ' + stacks.a);
+  console.log('b: ' + stacks.b);
+  console.log('c: ' + stacks.c);
 }
 
-function movePiece() {
-  // Your code here
-
+function movePiece(startStack, endStack) {
+  const last = stacks[startStack].pop();
+  stacks[endStack].push(last);
 }
 
-function isLegal() {
-  // Your code here
-
+function isLegal(startStack, endStack) {
+  const startArr = stacks[startStack];
+  const endArr = stacks[endStack];
+  return (
+    startArr.length > 0 &&
+    (endArr.length < 1 || startArr[startArr.length - 1] < endArr[endArr.length - 1])
+  );
 }
 
 function checkForWin() {
-  // Your code here
-
+  return Object.keys(stacks)
+    .filter(stack => stack !== 'a')
+    .some(stack => JSON.stringify(stacks[stack]) === JSON.stringify(winPos));
 }
 
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
-
+  if (isLegal(startStack, endStack)) {
+    movePiece(startStack, endStack);
+    return;
+  }
+  console.log('\nNo a legal move, please try again\n');
 }
 
 function getPrompt() {
   printStacks();
-  rl.question('start stack: ', (startStack) => {
-    rl.question('end stack: ', (endStack) => {
+  rl.question('start stack: ', startStack => {
+    rl.question('end stack: ', endStack => {
       towersOfHanoi(startStack, endStack);
+      if (checkForWin()) {
+        console.log('\nYou Win!\n');
+        return;
+      }
       getPrompt();
     });
   });
@@ -52,7 +66,6 @@ function getPrompt() {
 // Tests
 
 if (typeof describe === 'function') {
-
   describe('#towersOfHanoi()', () => {
     it('should be able to move a block', () => {
       towersOfHanoi('a', 'b');
@@ -86,9 +99,6 @@ if (typeof describe === 'function') {
       assert.equal(checkForWin(), false);
     });
   });
-
 } else {
-
   getPrompt();
-
 }

@@ -1,0 +1,173 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2018-12-09T18:42:48.182Z",
+    "end": "2018-12-09T18:42:48.195Z",
+    "duration": 13,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "passPercentClass": "success",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "846f8145-6941-488f-b4f6-1e094e6a4335",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "2dc7593b-98a9-431a-8666-eddb8204d673",
+        "title": "#towersOfHanoi()",
+        "fullFile": "C:\\Learning\\CodeAcademy\\dell-workbook\\13towers-of-hanoi-node\\index.js",
+        "file": "\\13towers-of-hanoi-node\\index.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should be able to move a block",
+            "fullTitle": "#towersOfHanoi() should be able to move a block",
+            "timedOut": false,
+            "duration": 1,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "towersOfHanoi('a', 'b');\nassert.deepEqual(stacks, { a: [4, 3, 2], b: [1], c: [] });",
+            "err": {},
+            "isRoot": false,
+            "uuid": "f18d4863-05a2-4a67-8f0c-9165bfbed82b",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "f18d4863-05a2-4a67-8f0c-9165bfbed82b"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 1,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      },
+      {
+        "uuid": "636e476b-c98b-4ebe-bb9d-8e127b98f75c",
+        "title": "#isLegal()",
+        "fullFile": "C:\\Learning\\CodeAcademy\\dell-workbook\\13towers-of-hanoi-node\\index.js",
+        "file": "\\13towers-of-hanoi-node\\index.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should not allow an illegal move",
+            "fullTitle": "#isLegal() should not allow an illegal move",
+            "timedOut": false,
+            "duration": 0,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "stacks = {\n  a: [4, 3, 2],\n  b: [1],\n  c: []\n};\nassert.equal(isLegal('a', 'b'), false);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "d665f2d9-ff1b-406c-b27f-be5b1c188be0",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "should allow a legal move",
+            "fullTitle": "#isLegal() should allow a legal move",
+            "timedOut": false,
+            "duration": 0,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "stacks = {\n  a: [4, 3, 2, 1],\n  b: [],\n  c: []\n};\nassert.equal(isLegal('a', 'c'), true);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "f8811cd7-e42a-4bf2-abe4-bd534c89cde7",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "d665f2d9-ff1b-406c-b27f-be5b1c188be0",
+          "f8811cd7-e42a-4bf2-abe4-bd534c89cde7"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      },
+      {
+        "uuid": "e260462e-5463-4d64-a170-649d0527d791",
+        "title": "#checkForWin()",
+        "fullFile": "C:\\Learning\\CodeAcademy\\dell-workbook\\13towers-of-hanoi-node\\index.js",
+        "file": "\\13towers-of-hanoi-node\\index.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "should detect a win",
+            "fullTitle": "#checkForWin() should detect a win",
+            "timedOut": false,
+            "duration": 0,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "stacks = { a: [], b: [4, 3, 2, 1], c: [] };\nassert.equal(checkForWin(), true);\nstacks = { a: [1], b: [4, 3, 2], c: [] };\nassert.equal(checkForWin(), false);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "5cda46cb-5146-4dc7-9bae-a114d7e667b5",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "5cda46cb-5146-4dc7-9bae-a114d7e667b5"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 0,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2018
+}
