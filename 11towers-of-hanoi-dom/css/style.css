@@ -1,0 +1,142 @@
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeup {
+  0% {
+    opacity: 0;
+    top: 100px;
+  }
+  to {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes bounceIn {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+#clear {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  min-width: 150px;
+  min-height: 45px;
+  z-index: 1;
+}
+
+.announce-winner {
+  align-items: center;
+  animation: fadein forwards 1 0.3s;
+  background: rgba(30, 30, 30, 0.9);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  text-align: center;
+  min-height: 100%;
+  min-width: 100%;
+  z-index: 9999;
+}
+
+.announce-winner h5 {
+  animation: bounceIn forwards 1 0.5s;
+  color: #f0f0f0;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+}
+
+[data-stack] {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 101px;
+  background-color: aliceblue;
+  margin: 25px;
+}
+
+[data-block] {
+  width: 25px;
+  float: left;
+  position: unset;
+}
+
+[data-block='25'] {
+  height: 25px;
+  background-color: blue;
+}
+
+[data-block='50'] {
+  height: 50px;
+  background-color: green;
+}
+
+[data-block='75'] {
+  height: 75px;
+  background-color: red;
+}
+
+[data-block='100'] {
+  height: 100px;
+  background-color: yellow;
+}
+
+#announce-game-won {
+  font-size: 50px;
+  text-align: center;
+}

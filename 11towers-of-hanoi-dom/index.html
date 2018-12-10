@@ -1,22 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Towers of Hanoi</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div data-stack="1">
-    <div data-block="100"></div>
-    <div data-block="75"></div>
-    <div data-block="50"></div>
-    <div data-block="25"></div>
-  </div>
-  <div data-stack="2">
-  </div>
-  <div data-stack="3">
-  </div>
-  <div id="announce-game-won"></div>
-  <script type="text/javascript" src="script.js"></script>
-</body>
+<html lang="en-US" class="no-js">
+  <head>
+    <!--
+      ==============================================
+      Title and Meta Tags
+      ===============================================
+    -->
+    <meta charset="utf-8" />
+    <title>Towers of Hanoi DOM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta description="Towers of Hanoi DOM" />
+    <meta name="Nelma Perera" content="11 Towers of Hanoi DOM" />
+
+    <!--
+      ==============================================
+      CSS
+      ===============================================
+    -->
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/reset.css" />
+    <!-- Compiled and minified materialize CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+
+    <!--
+      ==============================================
+      Font Icons
+      ===============================================
+    -->
+    <!-- Import Google Icon Font -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div data-stack="1">
+      <div data-block="100"></div>
+      <div data-block="75"></div>
+      <div data-block="50"></div>
+      <div data-block="25"></div>
+    </div>
+    <div data-stack="2"></div>
+    <div data-stack="3"></div>
+    <script type="text/javascript" src="./js/script.js"></script>
+  </body>
 </html>
