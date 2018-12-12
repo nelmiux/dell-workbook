@@ -40,13 +40,42 @@ function mergeSort(arr) {
     return arr;
   }
 
-  const midIdx = arr.length / 2;
+  const midIdx = Math.floor(arr.length / 2);
   const arr1 = mergeSort(arr.slice(0, midIdx));
   const arr2 = mergeSort(arr.slice(midIdx));
+
+  let sortedArr = [];
+  while (arr1.length && arr2.length) {
+    if (arr1[0] < arr2[0]) sortedArr.push(arr1.shift());
+    else sortedArr.push(arr2.shift());
+  }
+
+  if (arr1.length) sortedArr = sortedArr.concat(arr1);
+  else sortedArr = sortedArr.concat(arr2);
+
+  return sortedArr;
 }
 
 function binarySearch(arr, item) {
-  // Your code here
+  let minIndex = 0;
+  let maxIndex = arr.length - 1;
+  let currentIndex;
+  let currentElement;
+
+  while (minIndex <= maxIndex) {
+    currentIndex = Math.floor((minIndex + maxIndex) / 2);
+    currentElement = arr[currentIndex];
+
+    if (currentElement < item) {
+      minIndex = currentIndex + 1;
+    } else if (currentElement > item) {
+      maxIndex = currentIndex - 1;
+    } else {
+      return currentIndex;
+    }
+  }
+
+  return false;
 }
 
 // Tests
