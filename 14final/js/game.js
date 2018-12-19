@@ -23,7 +23,7 @@ let collegeAmount = 0;
 let upgradeButtonsData = [];
 let animationName = 'baby-run';
 
-class SplashSate extends Phaser.State {
+class LifeSate extends Phaser.State {
   preload() {
     this.load.image('background', 'assets/images/full-bg.png');
     this.load.image('layer-1', 'assets/images/layer-1.png');
@@ -65,6 +65,11 @@ class SplashSate extends Phaser.State {
       'assets/images/wise-runner/wise-runner.png',
       'assets/images/wise-runner/wise-runner.json'
     );
+
+    this.scaleMode = Phaser.ScaleManager.RESIZE;
+    this.pageAlignHorizontally = true;
+    this.pageAlignVertically = true;
+    //this.setScreenSize(true);
 
     let upannel = this.add.bitmapData(320, 275);
     upannel.ctx.fillStyle = '#64B5F6';
@@ -304,8 +309,11 @@ class GameState extends Phaser.State {
         }
       }
     ];
+    console.log(this.world.height);
+    console.log(worldHeight);
+    console.log(this.world.centerX);
 
-    runner = this.add.sprite(this.world.centerX - 48, worldHeight - 230, 'baby-runner');
+    runner = this.add.sprite(this.world.centerX - 48, this.world.height - 230, 'baby-runner');
     runner.animations.add('baby-run', null, true);
     runner.inputEnabled = true;
     runner.input.useHandCursor = true;
@@ -350,8 +358,6 @@ class GameState extends Phaser.State {
       excountNumber.text.text = experienceCounter;
     }
 
-    console.log(expToAdd);
-
     encountNumber.text.text = effortCounter;
 
     let timeToLive = 200;
@@ -387,9 +393,9 @@ class GameState extends Phaser.State {
 class Game extends Phaser.Game {
   constructor() {
     super(worldWidth, worldHeight, Phaser.CANVAS, '', '', true);
-    this.state.add('Splash', SplashSate);
+    this.state.add('Life', LifeSate);
     this.state.add('Game', GameState);
-    this.state.start('Splash');
+    this.state.start('Life');
   }
 }
 
