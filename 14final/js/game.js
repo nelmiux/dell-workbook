@@ -67,20 +67,20 @@ class SplashSate extends Phaser.State {
       'assets/images/wise-runner/wise-runner.json'
     );
 
-    let upannel = this.add.bitmapData(300, 275);
+    let upannel = this.add.bitmapData(320, 275);
     upannel.ctx.fillStyle = '#64B5F6';
     upannel.ctx.strokeStyle = '#1E88E5';
     upannel.ctx.lineWidth = 8;
-    upannel.ctx.fillRect(0, 0, 300, 275);
-    upannel.ctx.strokeRect(0, 0, 300, 275);
+    upannel.ctx.fillRect(0, 0, 320, 275);
+    upannel.ctx.strokeRect(0, 0, 320, 275);
     this.cache.addBitmapData('upgradePanel', upannel);
 
-    let buttonImage = this.add.bitmapData(290, 45);
+    let buttonImage = this.add.bitmapData(310, 45);
     buttonImage.ctx.fillStyle = '#E3F2FD';
     buttonImage.ctx.strokeStyle = '#42A5F5';
     buttonImage.ctx.lineWidth = 2;
-    buttonImage.ctx.fillRect(0, 0, 290, 45);
-    buttonImage.ctx.strokeRect(0, 0, 290, 45);
+    buttonImage.ctx.fillRect(0, 0, 310, 45);
+    buttonImage.ctx.strokeRect(0, 0, 310, 45);
     this.cache.addBitmapData('button', buttonImage);
 
     let cpannel = this.add.bitmapData(300, 100);
