@@ -361,7 +361,7 @@ class GameState extends Phaser.State {
     let bgColor = 0xfec72a;
 
     new FloatingText(this, {
-      text: `${effortIncrement}🚴‍`,
+      text: `${effortIncrement}⭐️`,
       animation: effect,
       textOptions: {
         fontSize: 18,
