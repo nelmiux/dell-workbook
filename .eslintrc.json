@@ -3,6 +3,12 @@
   "rules": {
     "indent": ["error", 2]
   },
+  "overrides": [
+    {
+      "files": [ "**/bin/*.js", "**/lib/*.js" ],
+      "excludedFiles": "*.min.js"
+    }
+  ],
   "env": {
     "es6": true
   }
