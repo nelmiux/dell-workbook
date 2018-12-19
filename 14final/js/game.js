@@ -25,7 +25,6 @@ let animationName = 'baby-run';
 
 class SplashSate extends Phaser.State {
   preload() {
-    this.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     this.load.image('background', 'assets/images/full-bg.png');
     this.load.image('layer-1', 'assets/images/layer-1.png');
     this.load.image('layer-2', 'assets/images/layer-2.png');
@@ -341,7 +340,7 @@ class GameState extends Phaser.State {
     effortCounter += effortIncrement;
     tempeffortCounter += effortIncrement;
     runner.animations.play(animationName, speedfactor, true);
-    speedfactor += (5 * (experienceCounter || 1)) / effortCounter;
+    speedfactor += (7 * (experienceCounter || 1)) / effortCounter;
     runner.animations.currentAnim.speed = speedfactor;
 
     const expToAdd = Math.floor(tempeffortCounter / experiencePereffort);
@@ -387,7 +386,7 @@ class GameState extends Phaser.State {
 
 class Game extends Phaser.Game {
   constructor() {
-    super(worldWidth, worldHeight, Phaser.AUTO, '', '', true);
+    super(worldWidth, worldHeight, Phaser.CANVAS, '', '', true);
     this.state.add('Splash', SplashSate);
     this.state.add('Game', GameState);
     this.state.start('Splash');
