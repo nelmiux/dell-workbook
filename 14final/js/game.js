@@ -167,8 +167,7 @@ class GameState extends Phaser.State {
     excountNumber.text = excountNumber.addChild(
       this.add.text(215, 6, '0', {
         font: '24px Luckiest Guy',
-        fill: 'green',
-        stroke: 'green'
+        fill: '#2E7D32'
       })
     );
 
