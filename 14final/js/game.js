@@ -8,7 +8,7 @@ const adultCost = 30;
 const wiseCost = 60;
 
 let cursors, runner, encountNumber, excountNumber;
-let tileSprite = [];
+let tileSprite;
 let effortCounter = 0;
 let tempeffortCounter = 0;
 let effortIncrement = 1;
@@ -100,12 +100,15 @@ class LifeSate extends Phaser.State {
 
 class GameState extends Phaser.State {
   create() {
-    this.background = this.game.add.group();
-    ['layer-1', 'layer-2', 'layer-3', 'layer-5', 'layer-6'].forEach(image => {
-      let bg = this.add.tileSprite(0, 0, worldWidth, worldHeight, image, '', this.background);
-      bg.tileScale.setTo(0.5, 0.5);
-      tileSprite.push(bg);
-    });
+    // this.background = this.add.group();
+    // ['layer-1', 'layer-2', 'layer-3', 'layer-5', 'layer-6'].forEach(image => {
+    //   let bg = this.add.tileSprite(0, 0, worldWidth, worldHeight, image, '', this.background);
+    //   bg.tileScale.setTo(0.5, 0.5);
+    //   tileSprite.push(bg);
+    // });
+    tileSprite = this.add.tileSprite(0,0, worldWidth, worldHeight, 'background');
+    tileSprite.tileScale.setTo(0.5, 0.5);
+
     // const bannerText = '14 Clicker Game';
     // let banner = this.add.text(this.world.centerX, 50, bannerText);
     // banner.padding.set(10, 16);
@@ -347,7 +350,7 @@ class GameState extends Phaser.State {
   onClickRunner() {
     effortCounter += effortIncrement;
     tempeffortCounter += effortIncrement;
-    runner.animations.play(animationName, speedfactor, true);
+    runner.animations.play(animationName, 50, true);
     speedfactor += (7 * (experienceCounter || 1)) / effortCounter;
     runner.animations.currentAnim.speed = speedfactor;
 
@@ -385,7 +388,8 @@ class GameState extends Phaser.State {
 
   update() {
     if (effortCounter > 0) {
-      tileSprite.forEach(ts => (ts.tilePosition.x += -(speedfactor / 10)));
+      // tileSprite.forEach(ts => (ts.tilePosition.x += -(speedfactor / 10)));
+      tileSprite.tilePosition.x += -(speedfactor / 10);
     }
   }
 }
