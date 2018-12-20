@@ -113,7 +113,7 @@ class GameState extends Phaser.State {
       worldHeight,
       'background'
     );
-    tileSprite.tileScale.setTo(1.8, 1.8);
+    tileSprite.tileScale.setTo(2, 2);
 
     // const bannerText = '14 Clicker Game';s
     // let banner = this.add.text(this.world.centerX, 50, bannerText);
