@@ -344,7 +344,7 @@ class GameState extends Phaser.State {
 
     runner = this.add.sprite(
       this.world.centerX - 48,
-      this.world.height - 260,
+      this.world.height - 250,
       'baby-runner'
     );
     runner.animations.add('baby-run', null, true);
