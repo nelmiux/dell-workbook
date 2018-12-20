@@ -269,7 +269,7 @@ class GameState extends Phaser.State {
             runner.kill();
             runner = this.add.sprite(
               this.world.centerX - 48,
-              worldHeight - 280,
+              worldHeight - 290,
               'teen-runner'
             );
             runner.scale.set(1.1, 1.1);
@@ -297,7 +297,7 @@ class GameState extends Phaser.State {
             runner.kill();
             runner = this.add.sprite(
               this.world.centerX - 48,
-              worldHeight - 290,
+              worldHeight - 300,
               'adult-runner'
             );
             runner.scale.set(1.2, 1.2);
@@ -325,7 +325,7 @@ class GameState extends Phaser.State {
             runner.kill();
             runner = this.add.sprite(
               this.world.centerX - 48,
-              worldHeight - 290,
+              worldHeight - 300,
               'wise-runner'
             );
             runner.scale.set(1.2, 1.2);
@@ -343,7 +343,7 @@ class GameState extends Phaser.State {
 
     runner = this.add.sprite(
       this.world.centerX - 48,
-      worldHeight - 260,
+      worldHeight - 270,
       'baby-runner'
     );
     runner.animations.add('baby-run', null, true);
