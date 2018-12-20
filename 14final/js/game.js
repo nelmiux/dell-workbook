@@ -147,7 +147,7 @@ class GameState extends Phaser.State {
     encountNumber.text = encountNumber.addChild(
       this.add.text(215, 6, '0', {
         font: '24px Luckiest Guy',
-        fill: '#EF6C00'
+        fill: '#E91E63'
       })
     );
 
@@ -270,7 +270,7 @@ class GameState extends Phaser.State {
             runner.kill();
             runner = this.add.sprite(
               this.world.centerX - 48,
-              worldHeight - 250,
+              worldHeight - 280,
               'teen-runner'
             );
             runner.scale.set(1.1, 1.1);
@@ -298,7 +298,7 @@ class GameState extends Phaser.State {
             runner.kill();
             runner = this.add.sprite(
               this.world.centerX - 48,
-              worldHeight - 270,
+              worldHeight - 290,
               'adult-runner'
             );
             runner.scale.set(1.2, 1.2);
@@ -326,7 +326,7 @@ class GameState extends Phaser.State {
             runner.kill();
             runner = this.add.sprite(
               this.world.centerX - 48,
-              worldHeight - 270,
+              worldHeight - 290,
               'wise-runner'
             );
             runner.scale.set(1.2, 1.2);
@@ -344,7 +344,7 @@ class GameState extends Phaser.State {
 
     runner = this.add.sprite(
       this.world.centerX - 48,
-      this.world.height - 250,
+      worldHeight - 260,
       'baby-runner'
     );
     runner.animations.add('baby-run', null, true);
@@ -407,7 +407,7 @@ class GameState extends Phaser.State {
       animation: effect,
       textOptions: {
         fontSize: 18,
-        fill: '#EF6C00',
+        fill: '#E91E63',
         wordWrap: true,
         wordWrapWidth: 200,
         font: 'Luckiest Guy'
