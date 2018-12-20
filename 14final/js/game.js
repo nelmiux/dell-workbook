@@ -26,21 +26,21 @@ let animationName = 'baby-run';
 class LifeSate extends Phaser.State {
   preload() {
     this.load.image('background', 'assets/images/full-bg.png');
-    this.load.image('layer-1', 'assets/images/layer-1.png');
-    this.load.image('layer-2', 'assets/images/layer-2.png');
-    this.load.image('layer-3', 'assets/images/layer-3.png');
-    this.load.image('layer-5', 'assets/images/layer-5.png');
-    this.load.image('layer-6', 'assets/images/layer-6.png');
+    // this.load.image('layer-1', 'assets/images/layer-1.png');
+    // this.load.image('layer-2', 'assets/images/layer-2.png');
+    // this.load.image('layer-3', 'assets/images/layer-3.png');
+    // this.load.image('layer-5', 'assets/images/layer-5.png');
+    // this.load.image('layer-6', 'assets/images/layer-6.png');
 
-    this.game.load.image('effort', 'assets/icons/S_Buff08.png');
-    this.game.load.image('experience', 'assets/icons/I_Scroll02.png');
+    this.load.image('effort', 'assets/icons/S_Buff08.png');
+    this.load.image('experience', 'assets/icons/I_Scroll02.png');
 
-    this.game.load.image('book', 'assets/icons/I_Book.png');
-    this.game.load.image('school', 'assets/icons/Ac_Medal02.png');
-    this.game.load.image('college', 'assets/icons/I_Scroll.png');
-    this.game.load.image('teen', 'assets/icons/I_Crystal01.png');
-    this.game.load.image('adult', 'assets/icons/I_Sapphire.png');
-    this.game.load.image('wise', 'assets/icons/I_Diamond.png');
+    this.load.image('book', 'assets/icons/I_Book.png');
+    this.load.image('school', 'assets/icons/Ac_Medal02.png');
+    this.load.image('college', 'assets/icons/I_Scroll.png');
+    this.load.image('teen', 'assets/icons/I_Crystal01.png');
+    this.load.image('adult', 'assets/icons/I_Sapphire.png');
+    this.load.image('wise', 'assets/icons/I_Diamond.png');
 
     this.load.atlas(
       'baby-runner',
@@ -106,6 +106,8 @@ class GameState extends Phaser.State {
     //   bg.tileScale.setTo(0.5, 0.5);
     //   tileSprite.push(bg);
     // });
+    const backgroundWidth = this.cache.getImage('background').width;
+    const backgroundHeight = this.cache.getImage('background').height;
     tileSprite = this.add.tileSprite(
       0,
       0,
@@ -113,9 +115,12 @@ class GameState extends Phaser.State {
       worldHeight,
       'background'
     );
-    tileSprite.tileScale.setTo(2, 2);
+    tileSprite.tileScale.setTo(
+      worldWidth / backgroundWidth,
+      worldHeight / backgroundHeight
+    );
 
-    // const bannerText = '14 Clicker Game';s
+    // const bannerText = '14 Clicker Game';
     // let banner = this.add.text(this.world.centerX, 50, bannerText);
     // banner.padding.set(10, 16);
     // banner.fontSize = 30;
@@ -336,13 +341,10 @@ class GameState extends Phaser.State {
         }
       }
     ];
-    console.log(this.world.height);
-    console.log(worldHeight);
-    console.log(this.world.centerX);
 
     runner = this.add.sprite(
       this.world.centerX - 48,
-      this.world.height - 230,
+      this.world.height - 300,
       'baby-runner'
     );
     runner.animations.add('baby-run', null, true);
