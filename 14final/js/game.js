@@ -106,10 +106,16 @@ class GameState extends Phaser.State {
     //   bg.tileScale.setTo(0.5, 0.5);
     //   tileSprite.push(bg);
     // });
-    tileSprite = this.add.tileSprite(0,0, worldWidth, worldHeight, 'background');
-    tileSprite.tileScale.setTo(0.5, 0.5);
+    tileSprite = this.add.tileSprite(
+      0,
+      0,
+      worldWidth,
+      worldHeight,
+      'background'
+    );
+    tileSprite.tileScale.setTo(1.8, 1.8);
 
-    // const bannerText = '14 Clicker Game';
+    // const bannerText = '14 Clicker Game';s
     // let banner = this.add.text(this.world.centerX, 50, bannerText);
     // banner.padding.set(10, 16);
     // banner.fontSize = 30;
@@ -164,7 +170,11 @@ class GameState extends Phaser.State {
     counters.addChild(excount);
     counters.addChild(excountNumber);
 
-    this.upgradePanel = this.add.image(50, 70, this.cache.getBitmapData('upgradePanel'));
+    this.upgradePanel = this.add.image(
+      50,
+      70,
+      this.cache.getBitmapData('upgradePanel')
+    );
     let upgradeButtons = this.upgradePanel.addChild(this.add.group());
     upgradeButtons.position.setTo(5, 5);
 
@@ -181,9 +191,9 @@ class GameState extends Phaser.State {
             ++bookAmount;
             effortCounter -= bookCost;
             tempeffortCounter -= bookCost;
-            button.text.text = `${button.details.name}: ${bookAmount} -- Cost: ${
-              button.details.cost
-            }`;
+            button.text.text = `${
+              button.details.name
+            }: ${bookAmount} -- Cost: ${button.details.cost}`;
             encountNumber.text.text = effortCounter;
           }
         }
@@ -199,14 +209,16 @@ class GameState extends Phaser.State {
             ++schoolAmount;
             effortCounter -= schoolCost;
             tempeffortCounter -= schoolCost;
-            button.text.text = `${button.details.name}: ${schoolAmount} -- Cost: ${
-              button.details.cost
-            }`;
+            button.text.text = `${
+              button.details.name
+            }: ${schoolAmount} -- Cost: ${button.details.cost}`;
             encountNumber.text.text = effortCounter;
             setInterval(() => {
               effortCounter += effortIncrement;
               tempeffortCounter += effortIncrement;
-              const expToAdd = Math.floor(tempeffortCounter / experiencePereffort);
+              const expToAdd = Math.floor(
+                tempeffortCounter / experiencePereffort
+              );
               if (expToAdd > 0) {
                 experienceCounter += expToAdd;
                 tempeffortCounter = 0;
@@ -229,9 +241,9 @@ class GameState extends Phaser.State {
             effortCounter -= collegeCost;
             tempeffortCounter -= collegeCost;
             encountNumber.text.text = effortCounter;
-            button.text.text = `${button.details.name}: ${collegeAmount} -- Cost: ${
-              button.details.cost
-            }`;
+            button.text.text = `${
+              button.details.name
+            }: ${collegeAmount} -- Cost: ${button.details.cost}`;
             setInterval(function() {
               ++experienceCounter;
               excountNumber.text.text = experienceCounter;
@@ -251,7 +263,11 @@ class GameState extends Phaser.State {
             excountNumber.text.text = experienceCounter;
             experiencePereffort = 80;
             runner.kill();
-            runner = this.add.sprite(this.world.centerX - 48, worldHeight - 250, 'teen-runner');
+            runner = this.add.sprite(
+              this.world.centerX - 48,
+              worldHeight - 250,
+              'teen-runner'
+            );
             runner.scale.set(1.1, 1.1);
             animationName = 'teen-run';
             runner.animations.add(animationName, null, true);
@@ -275,7 +291,11 @@ class GameState extends Phaser.State {
             excountNumber.text.text = experienceCounter;
             experiencePereffort = 40;
             runner.kill();
-            runner = this.add.sprite(this.world.centerX - 48, worldHeight - 270, 'adult-runner');
+            runner = this.add.sprite(
+              this.world.centerX - 48,
+              worldHeight - 270,
+              'adult-runner'
+            );
             runner.scale.set(1.2, 1.2);
             animationName = 'adult-run';
             runner.animations.add(animationName, null, true);
@@ -299,7 +319,11 @@ class GameState extends Phaser.State {
             excountNumber.text.text = experienceCounter;
             experiencePereffort = 20;
             runner.kill();
-            runner = this.add.sprite(this.world.centerX - 48, worldHeight - 270, 'wise-runner');
+            runner = this.add.sprite(
+              this.world.centerX - 48,
+              worldHeight - 270,
+              'wise-runner'
+            );
             runner.scale.set(1.2, 1.2);
             animationName = 'wise-run';
             runner.animations.add(animationName, null, true);
@@ -316,7 +340,11 @@ class GameState extends Phaser.State {
     console.log(worldHeight);
     console.log(this.world.centerX);
 
-    runner = this.add.sprite(this.world.centerX - 48, this.world.height - 230, 'baby-runner');
+    runner = this.add.sprite(
+      this.world.centerX - 48,
+      this.world.height - 230,
+      'baby-runner'
+    );
     runner.animations.add('baby-run', null, true);
     runner.inputEnabled = true;
     runner.input.useHandCursor = true;
@@ -324,7 +352,11 @@ class GameState extends Phaser.State {
 
     upgradeButtonsData.forEach((buttonData, index) => {
       let button;
-      button = this.add.button(0, 44 * index, this.cache.getBitmapData('button'));
+      button = this.add.button(
+        0,
+        44 * index,
+        this.cache.getBitmapData('button')
+      );
       button.icon = button.addChild(this.add.image(10, 4, buttonData.icon));
       let headButtonText = buttonData.name;
       if (buttonData.amount !== null) {
